@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="lt">
+<head>
+<title>Informacija apie lankytinų vietų žemėlapį</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Lietuvos lankytinos vietos atvirame ir nemokamame Open Street Map žemėlapyje">
+<meta name="keywords" content="OSM Open Street Map Žemėlapis Lietuva Lithuania Lankytinos vietos">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="//dev.openmap.lt/js2/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="kom/kom.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-18331326-3', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+<body>
+<h2>Lietuvos lankytinos vietos</h2>
+
+<p class="meniu">
+<a href="/">Žemėlapis</a>
+<a href="info.html" style="background: #77ff77;">Bendra informacija</a>
+<a href="lankytinos.html">Lankytinos vietos</a>
+<a href="duomenys.html">Žemėlapio duomenys</a>
+<a href="technine.html">Techninė info</a>
+<a href="kontaktai.html">Kontaktai</a>
+<a href="prisidekite.html">Prisidėkite!</a>
+</p>
+
+<h3>Bendra informacija</h3>
+
+Tai seniausias Lietuvos lankytinų vietų žemėlapis. Žemėlapis paremtas atvira OpenStreetMap informacija. Lankytinas vietas įvesti <b>nemokamai</b> gali bet kas. Informaciją <b>nemokamai</b> naudoti išsitraukti ir naudoti savo tikslais irgi gali bet kas (kol tenkinamos ODbL licencijos sąlygos: paminimas šaltinis ir išvestinis duomenų rinkinys irgi atviras).
+
+<h3>Naujienos</h3>
+<ul>
+<li><i>2017-07-20</i> - Pridėtas lankytinų vietų kolekcionavimas. Tai padės jums lengviau rasti vietas, kurių dar nesate aplankę. Tai prideda ir žaidimo elementą, nes dabar galite „kolekcionuoti“ aplankytas vietas.
+<br>1. Žemėlapyje „nueikite“ į vietą, nuo kurios norite ieškoti lankytinų vietų. Spauskite kolekcionavimo mygtuką:
+<br><img src="doc/kolekcionavimas.png">
+<br>2. Prisijunkite ir parinkite jus dominančias grupes:
+<br><img src="doc/grupes.png">
+<br>3. Matote lankytinas vietas, išrikiuotas pagal atstumą nuo jūsų parinktos pozicijos:
+<br><img src="doc/vietos.png">
+<br>4. Parinktę vietą galite nurodyti, kad ją aplankėte arba ji jums neįdomi (abiem atvejais vieta dings iš aplankyti siūlomo sąrašo)
+<br><img src="doc/detales.png">
+<br>&nbsp;</li>
+<li><i>2017-06-09</i> - Pridėta lankytinų vietų paieška.
+<br><img src="places_paieska.png" alt="Lankytinų vietų paieška"><br>&nbsp;</li>
+<li><i>2017-05-25</i> - Pridėta galimybė pritraukti žemėlapį iki jūsų esamos vietos (mobiliuose įrenginiuose nepamirškite įjungti GPS).
+<br><img src="pozicijos_nustatymas.png" alt="Pozicijos nustatymas"><br>&nbsp;</li>
+<li><i>2017-04-28</i> - Startuoja atnaujinta ir mobiliems įrenginiams pritaikyta lankytinų vietų svetainės <i>places</i> versija.</li>
+</ul>
+
+<div style="position: absolute; right: 0px; top: 2em;" onClick="showComment()"><img src="kom/atsiliepimai.png" alt="Atsiliepimai"></div>
+<div id="kom" class="kom"></div>
+<script>init(3, 'https://places.openmap.lt');</script>
+</body>

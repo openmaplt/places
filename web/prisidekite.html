@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="lt">
+<head>
+<title>Prisidėkite prie atviro žemėlapio tobulinimo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Prisidėkite prie atviro ir nemokamo Open Street Map Lietuvos žemėlapio kūrimo">
+<meta name="keywords" content="OSM Open Street Map Žemėlapis Lietuva Lithuania Garmin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="//dev.openmap.lt/js2/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="kom/kom.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-18331326-3', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+<body>
+<h2>Lietuvos lankytinų vietų žemėlapis</h2>
+
+<p class="meniu">
+<a href="/">Žemėlapis</a>
+<a href="info.html">Bendra informacija</a>
+<a href="lankytinos.html">Lankytinos vietos</a>
+<a href="duomenys.html">Žemėlapio duomenys</a>
+<a href="technine.html">Techninė info</a>
+<a href="kontaktai.html">Kontaktai</a>
+<a href="prisidekite.html" style="background: #77ff77;">Prisidėkite!</a>
+</p>
+
+<p>Jei žemėlapyje trūksta kažkokių duomenų arba pastebėjote klaidų - galite padėti atviro žemėlapio projektui tas klaidas pataisyti.</p>
+
+<h3>Klaidų pranešimas</h3>
+
+<p>Paprasčiausias būdas padėti - registruoti klaidas (<i>angl. notes</i>) atvirame žemėlapyje. Pridėti pastabą labai paprasta, svetainėje <a href="http://www.openstreetmap.org">http://www.openstreetmap.org</a>, dešinėje raskite mygtuką „Pridėti pastabą prie žemėlapio“:</p>
+
+<img src="prideti_pastaba.png" alt="Pridėti pastabą prie žemėlapio">
+
+<p>Prieš spausdami šį mygtuką, žemėlapyje suraskite vietą, apie kurią norite rašyti pastabą. T.y. tiesiog tempkite žemėlapį į norimą vietą ir pasistenkite kiek galima arčiau „pritraukti“, kad pranešama pozicija būtų kiek galima tikslesnė. Tada spauskite mygtuką „Pridėti pastabą prie žemėlapio“. Žemėlapio viduryje atisras žymeklis, o kairėje pusėje - laukas, leidžiantis rašyti pranešimą:</p>
+
+<img src="prideti_pastaba2.png" alt="Rašyti pastabą">
+
+<p>Žymeklio pozicija dar nefiksuota, tai galite su pele jį nutempti į reikiamą/tikslesnę poziciją. Rašydami pastabos tekstą pasistenkite pateikti kiek galima daugiau informacijos. T.y. nerašykite tiesiog objekto pavadinimo, pvz. „Ešerinis“, jei norite pasakyti, kad po žymekliu esantis ežeras vadinasi „Ešerinis“ - taip ir parašykite „Šio ežero pavadinimas yra Ešerinis“. Jei norite, kad žemėlapyje atsirastų kavinė „Ryto kava“ ar kokia kita lankytina vieta - parašykite ne tik pavadinimą, bet ir lankytinos vitos tipą (kavinė, restoranas, muziejus, viešbutis, poilsiavietė ir pan.), jei žinote - parašykite ir darbo laiką, svetainės adresą ir kitą žinomą informaciją.</p>
+
+<h4>Klausimai/neaiškumai</h4>
+
+<p>Registracija pastabų kūrimui nėra būtina. Jei sukursite pastbą neprisijungę prie savo OpenStreetMap paskyros, negausite pranešimų apie tai, kad kažkas pakomentavo jūsų pastabą. Gal atviro žemėlapio žymėtojams nepakako jūsų pateiktos informacijos, kad galėtų pataisyti problemą žemėlapyje, ir jie paprašė parašyti daugiau informacijos. Jei pastabą kursite prieš tai prisiregistravę - tada gausite pranešimą, kai kažkas pakomentuos jūsų pastabą, ir galėsite pateikti trūkstamą informaciją. Jei visgi registruotis nenorite, užeikite į savo pastabos vietą vėliau (po dienos ar daugiau) ir pažiūrėkite, ar prie jūsų pastabos nėra pridėti papildomi klausimai. Kad matytumėte pastabas žemėlapyje, jums reikės įjungti pastabų sluoksnį:</p>
+
+<img src="sluoksniu_pasirinkimas.png" alt="Pastabų sluoksnio pasirinkimas">
+
+<h3>Žemėlapio redagavimas</h3>
+
+<p>Jei norite rimčiau įsitraukti į atviro žemėlapio redagavimą - galite prisijungti prie milijonų žymėtojų ir patys pataisyti ar pridėti trūkstamus duomenis! Daugiau informacijos apie žymėjimą rasite <a href="http://blog.openmap.lt">http://blog.openmap.lt</a>.</p>
+
+<div style="position: absolute; right: 0px; top: 2em;" onClick="showComment()"><img src="kom/atsiliepimai.png" alt="Atsiliepimai"></div>
+<div id="kom" class="kom"></div>
+<script>init(3, 'https://places.openmap.lt');</script>
+
+</body>

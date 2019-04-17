@@ -1,0 +1,11 @@
+p { max-width: 600px; }
+p.meniu a { background: #ccffcc; padding: 0.5em; border: 1px solid black; white-space: nowrap; text-decoration: none; color: black; }
+p.meniu a:hover { background: #66ff66; cursor: pointer; }
+p.meniu { line-height: 2.8em; max-width: none; }
+p.meniu2 a { background: #ccffcc; padding: 0.2em; border: 1px solid black; white-space: nowrap; text-decoration: none; color: black; }
+p.meniu2 a:hover { background: #66ff66; cursor: pointer; }
+p.meniu2 { line-height: 2em; max-width: none; }
+td { vertical-align: top; }
+a.download { background: #aaffaa; padding: 0.5em; border: 1px solid black; cursor: pointer; border 1px solid black; text-decoration: none; line-height: 3em; }
+a.download:hover { background: #66ff66; }
+.kom { position: absolute; top: 0px; left: 0px; z-index: 5; height: 100%; width: 100%; background-color: rgba(255,255,255,0.95); display: none; }

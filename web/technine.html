@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="lt">
+<head>
+<title>Techninė lankytinų vietų informacija</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Lietuvos lankytinos vietos atvirame ir nemokamame Open Street Map žemėlapyje">
+<meta name="keywords" content="OSM Open Street Map Žemėlapis Lietuva Lithuania Lankytinos vietos">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="//dev.openmap.lt/js2/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="kom/kom.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-18331326-3', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+<body>
+<h2>Techninė lankytinų vietų informacija</h2>
+
+<p class="meniu">
+<a href="/">Žemėlapis</a>
+<a href="info.html">Bendra informacija</a>
+<a href="lankytinos.html">Lankytinos vietos</a>
+<a href="duomenys.html">Žemėlapio duomenys</a>
+<a href="technine.html" style="background: #77ff77;">Techninė info</a>
+<a href="kontaktai.html">Kontaktai</a>
+<a href="prisidekite.html">Prisidėkite!</a>
+</p>
+
+<p>Žemiau pateikta techninė informacija tiems, kas žymi objektus atvirame žemėlapyje OpenStretMap. Jei nenorite gilintis į atvirojo žemėlapio subtilybes, galite tiesiog <a href="prisidekite.html">registruoti pastabą</a>.</p>
+
+<table border=1 cellspacing=0>
+<tr><th>Tipas</th><th>Sąlyga</th></tr>
+<tr><td><img src="img/hillfort_.png"> Piliakalniai</td><td>historic = 'archaeological_site' and<br>site_type = 'fortification'</td></tr>
+<tr><td><img src="img/paveldas_.png"> Paveldas</td><td>"ref:lt:kpd" is not null and<br>(coalesce(historic, '@') != 'archaeological_site' or coalesce(site_type, '@') != 'fortification')</td></tr>
+<!--tr><td><img src="img/memorial_.png"> Paminklas</td><td>historic in ('monument', 'memorial')</td></tr-->
+<tr><td><img src="img/tumulus_.png"> Pilkapiai</td><td>historic = 'archaeological_site' and<br>site_type = 'tumulus'</td></tr>
+<tr><td><img src="img/dvarai_.png"> Dvarai</td><td>historic = 'manor</td></tr>
+<tr><td><img src="img/ruins_.png"> Kiti istoriniai</td><td>historic is not null and<br>
+historic not in ('monument', 'memorial', 'wayside_cross', 'wayside_shrine', 'manor') and</br>
+(historic != 'archaeological_site' or site_type not in ('fortification', 'tumulus'))</td></tr>
+<tr><td><img src="img/information_.png"> Turizmo informacija</td><td>tourism = 'information'</td></tr>
+<tr><td><img src="img/footprint_.png"> Lankytinos vietos</td><td>tourism = 'attraction' and<br>historic is null and<br>"attraction:type" is null</td></tr>
+<tr><td><img src="img/viewpoint_.png"> Vaizdingos vietos</td><td>tourism = 'viewpoint' and<br>historic is null</td></tr>
+<tr><td><img src="img/hiking_.png"> Pažintiniai takai</td><td>tourism = 'attraction' and<br>"attraction:type" = 'hiking_route'</td></tr>
+<tr><td><img src="img/tower_.png"> Bokštai</td><td>man_made in ('tower', 'communications_tower') and<br>"tower:type" is not null and<br>tourism in ('attraction', 'viewpoint', 'museum') and<br>coalesce(access, 'yes') != 'no'</td></tr>
+<tr><td><img src="img/fire_.png"> Poilsiavitės su laužaviete</td><td>tourism = 'picnic_site' or amenity = 'shelter' and<br>fireplace = 'yes'</td></tr>
+<tr><td><img src="img/picnic_.png"> Poilsiavitės be laužavietės</td><td>tourism = 'picnic_site' or amenity = 'shelter' and<br>fireplace is null or fireplace = 'no'</td></tr>
+<tr><td><img src="img/camping_.png"> Kempingai</td><td>tourism in ('camp_site', 'caravan_site')</td></tr>
+<tr><td><img src="img/hostel_.png"> Hosteliai</td><td>tourism in ('chalet', 'hostel', 'motel', 'guest_house')</td></tr>
+<tr><td><img src="img/hotel_.png"> Viešbučiai</td><td>tourism = 'hotel'</td></tr>
+<tr><td><img src="img/fillingstation_.png"> Degalinės</td><td>amenity = 'fuel'</td></tr>
+<tr><td><img src="img/speed_.png"> Greičio kameros</td><td>highway = 'speed_camera'</td></tr>
+<tr><td><img src="img/carwash_.png"> Plovyklos</td><td>amenity = 'car_wash'</td></tr>
+<tr><td><img src="img/repair_.png"> Servisai</td><td>shop = 'car_repair'</td></tr>
+<tr><td><img src="img/coffee_.png"> Kavinės</td><td>amenity = 'cafe'</td></tr>
+<tr><td><img src="img/burger_.png"> Greitas maistas</td><td>amenity = 'fast_food'</td></tr>
+<tr><td><img src="img/restaurant_.png"> Restoranai</td><td>amenity = 'restaurant'</td></tr>
+<tr><td><img src="img/bar_.png"> Aludės, barai</td><td>amenity in ('pub', 'bar')</td></tr>
+<tr><td><img src="img/theater_.png"> Teatrai</td><td>amenity = 'theatre'</td></tr>
+<tr><td><img src="img/cinema_.png"> Kino teatrai</td><td>amenity = 'cinema'</td></tr>
+<tr><td><img src="img/art-museum_.png"> Meno centrai</td><td>amenity = 'arts_centre'</td></tr>
+<tr><td><img src="img/museum_.png"> Muziejai</td><td>tourism = 'museum'</td></tr>
+<tr><td><img src="img/library_.png"> Bibliotekos</td><td>amenity = 'library'</td></tr>
+<tr><td><img src="img/hospital_.png"> Ligoninės</td><td>amenity = 'hospital'</td></tr>
+<tr><td><img src="img/firstaid_.png"> Klinikos</td><td>amenity = 'clinic'</td></tr>
+<tr><td><img src="img/dentist_.png"> Odontologija</td><td>amenity = 'dentist</td></tr>
+<tr><td><img src="img/medicine_.png"> Daktarai</td><td>amenity = 'doctors'</td></tr>
+<tr><td><img src="img/drugstore_.png"> Vaistinės</td><td>amenity = 'pharmacy'</td></tr>
+<tr><td><img src="img/supermarket_.png"> Prekubos centrai</td><td>shop in ('supermarket', 'mall')</td></tr>
+<tr><td><img src="img/convenience_.png"> Parduotuvės</td><td>shop = 'convenience'</td></tr>
+<tr><td><img src="img/market_.png"> Kioskai</td><td>shop = 'kiosk'</td></tr>
+<tr><td><img src="img/workshop_.png"> Pasidaryk pats</td><td>shop = 'doityourself'</td></tr>
+<tr><td><img src="img/departmentstore_.png"> Kitos parduotuvės</td><td>shop is not null and<br>shop not in ('supermarket', 'mall', 'convenience', 'car_repair', 'kiosk', 'doityourself')</td></tr>
+<tr><td><img src="img/cathedral_.png"> Katalikų bažnyčios</td><td>amenity = 'place_of_worship' and<br>religion = 'christian' and<br>denomination in ('catholic', 'roman_catholic')</td></tr>
+<tr><td><img src="img/lutheran_.png"> Evangelikų bažnyčios</td><td>amenity = 'place_of_worship' and<br>religion = 'christian' and<br>denomination in ('lutheran', 'evangelical', 'reformed')</td></tr>
+<tr><td><img src="img/orthodox_.png"> Cerkvės</td><td>amenity = 'place_of_worship' and<br>religion = 'christian' and</br>denomination in ('orthodox', 'old_believers')</td></tr>
+<tr><td><img src="img/prayer_.png"> Kitų religijų maldos namai</td><td>amenity = 'place_of_worship' and<br>(religion != 'christian' or coalesce(denomination, '@') not in ('catholic', 'roman_catholic', 'lutheran', 'evangelical', 'reformed', 'orthodox', 'old_believers'))</td></tr>
+<tr><td><img src="img/convent_.png"> Vienuolynai</td><td>historic = 'monastery'</td></tr>
+<tr><td><img src="img/congress_.png"> Valstybinės įstaigos</td><td>office = 'government' or amenity = 'townhall'</td></tr>
+<tr><td><img src="img/court_.png"> Teismai</td><td>amenity = 'courthouse'</td></tr>
+<tr><td><img src="img/postal_.png"> Paštai</td><td>amenity = 'post_office'</td></tr>
+<tr><td><img src="img/administration_.png"> Notarai, antstoliai</td><td>office in ('notary', 'lawyer')</td></tr>
+<tr><td><img src="img/police_.png"> Policija</td><td>amenity = 'police'</td></tr>
+<tr><td><img src="img/office-building_.png"> Kitos įmonės</td><td>office is not null and office not in ('government', 'notary', 'lawyer', 'insurance')</td></tr>
+<tr><td><img src="img/bigcity_.png"> Bankai</td><td>amenity = 'bank</td></tr>
+<tr><td><img src="img/umbrella_.png"> Draudimas</td><td>office = 'insurance'</td></tr>
+<tr><td><img src="img/euro_.png"> Bankomatai</td><td>amenity = 'atm'</td></tr>
+</table>
+        
+<div style="position: absolute; right: 0px; top: 2em;" onClick="showComment()"><img src="kom/atsiliepimai.png" alt="Atsiliepimai"></div>
+<div id="kom" class="kom"></div>
+<script>init(3, 'https://places.openmap.lt');</script>
+</body>

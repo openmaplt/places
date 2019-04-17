@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html style="height:100%" lang="lt">
+<head>
+  <title>Atviras Lietuvos lankytinų vietų žemėlapis</title>
+  <meta name="description" content="Ilgiausiai veikiantis ir išsamiausias Lietuvos lankytinų vietų žemėlapis: turizmas, paveldas, apgyvendinimas, automobiliai, įstaigos, prekyba, pramogos, religija ir t.t.">
+  <meta name="keywords" content="Lietuva lankytinos vietos piliakalniai stovyklavietės kempingai restoranai barai kavinės degalinės muziejai parduotuvės">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+  <meta property="og:title" content="Lietuvos lankytinos vietos" />
+  <meta property="og:description" content="Interaktyvus Lietuvos lankytinų vietų žemėlapis: turizmas, prekyba, apgyvendinimas, paveldas, religija ir t.t." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://places.openmap.lt/" />
+  <meta property="og:locale" content="lt_LT" />
+  <link rel="stylesheet" href="/js/ol.css" type="text/css">
+  <link rel="stylesheet" href="main.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>.material-icons { font-size: 38px; color: white; }</style>
+  <style>.ol-control button {background-color: rgb(0,0,0)}</style>
+  <script type="text/javascript" src="/js/ol.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script type="text/javascript" src="styles.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-18331326-3', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+<body onload="init();" style="height:100%;margin:0px;overflow:hidden;">
+<div id="loader"></div>
+<div id="map" class="map"></div>
+<div id="lay" class="layers" style="display: none;">
+  <p id="layh">Uždaryti</p>
+  <p onClick="switchToLayer('T')">Turizmas
+  <br><img src="img/layer_turizmas.png" alt="Turizmo sluoksnio iliustracija"></p>
+  <p onClick="switchToLayer('M')">Turizmas (mišrus)
+  <br><img src="img/layer_misrus.png" alt="Mišraus turizmo ir ortofoto sluoksnio iliustracija"></p>
+  <p onClick="switchToLayer('S')">OpenStreetMap
+  <br><img src="img/layer_openstreetmap.png" alt="OpenStreetMap sluoksnio iliustracija"></p>
+  <p onClick="switchToLayer('R')">NŽT Ortofoto 2015-2017
+  <br><img src="img/layer_ortofoto.png" alt="Ortofoto 2015-2017 iliustracija"></p>
+  <p onClick="switchToLayer('L')">NŽT Ortofoto 2012-2013
+  <br><img src="img/layer_ortofoto.png" alt="Ortofoto 2012-2013 iliustracija"></p>
+</div>
+<div id="desc" class="desc">
+<p></p>
+</div>
+<div id="back" class="back"></div>
+<div id="poi" class="poi">
+  <p id="poih" style="background-color: #ff5555;">Uždaryti</p>
+  <div id="g_paveldas" style="border-color: #AA7711;"><p style="background-color: #AA7711; color: white;">Paveldas</p>
+  <p id="b" onClick="switchPoi('b')"><img src="img/hillfort_.png" alt="Piliakalniai"> Piliakalniai</p>
+  <p id="e" onClick="switchPoi('e')"><img src="img/tumulus_.png" alt="Pilkapiai"> Pilkapiai</p>
+  <p id="f" onClick="switchPoi('f')"><img src="img/dvarai_.png" alt="Dvarai"> Dvarai</p>
+  <p id="c" onClick="switchPoi('c')"><img src="img/paveldas_.png" alt="Paveldas"> Paveldas</p>
+  <!--p id="d" onClick="switchPoi('d')"><img src="img/memorial_.png" alt="Paminklai"> Paminklai</p-->
+  <p id="a" onClick="switchPoi('a')"><img src="img/ruins_.png" alt="Kiti istoriniai"> Kiti istoriniai</p>
+  </div>
+  <div id="g_turizmas" style="border-color: #008000;"><p style="background-color: #008000; color: white;">Turizmas</p>
+  <p id="t" onClick="switchPoi('t')"><img src="img/information_.png" alt="Turizmo informacija"> Turizmo informacija</p>
+  <p id="h" onClick="switchPoi('h')"><img src="img/footprint_.png" alt="Lankytinos vietos"> Lankytinos vietos</p>
+  <p id="W" onClick="switchPoi('W')"><img src="img/viewpoint_.png" alt="Vaizdingos vietos"> Vaizdingos vietos</p>
+  <p id="3" onClick="switchPoi('3')"><img src="img/tree_.png"> Gamtos paveldas</p>
+  <p id="1" onClick="switchPoi('1')"><img src="img/hiking_.png" alt="Pažintiniai takai"> Pažintiniai takai</p>
+  <p id="g" onClick="switchPoi('g')"><img src="img/tower_.png" alt="Bokštai"> Bokštai</p>
+  <p id="j" onClick="switchPoi('j')"><img src="img/fire_.png" alt="Poilsiavietės su laužaviete"> Poilsiavietės su laužaviete</p>
+  <p id="k" onClick="switchPoi('k')"><img src="img/picnic_.png" alt="Poilsiavietės be laužavietės"> Poilsiavietės be laužavietės</p>
+  </div>
+  <div id="g_apgyvendinimas" style="border-color: #0000ff;"><p style="background-color: #0000ff; color: white;">Apgyvendinimas</p>
+  <p id="l" onClick="switchPoi('l')"><img src="img/camping_.png" alt="Kempingai"> Kempingai</p>
+  <p id="m" onClick="switchPoi('m')"><img src="img/hostel_.png" alt="Hosteliai, svečių namai"> Hosteliai, svečių namai</p>
+  <p id="s" onClick="switchPoi('s')"><img src="img/hotel_.png" alt="Viešbučiai"> Viešbučiai</p>
+  </div>
+  <div id="g_transportas" style="border-color: #000000;"><p style="background-color: #000000; color: white;">Transportas</p>
+  <p id="n" onClick="switchPoi('n')"><img src="img/fillingstation_.png" alt="Degalinės"> Degalinės</p>
+  <p id="w" onClick="switchPoi('w')"><img src="img/speed_.png" alt="Greičio kameros"> Greičio kameros</p>
+  <p id="T" onClick="switchPoi('T')"><img src="img/carwash_.png" alt="Plovyklos"> Plovyklos</p>
+  <p id="G" onClick="switchPoi('G')"><img src="img/repair_.png" alt="Servisai"> Servisai</p>
+  </div>
+  <div id="g_maistas" style="border-color: #c000c0;"><p style="background-color: #c000c0; color: white;">Maistas, gėrimai</p>
+  <p id="o" onClick="switchPoi('o')"><img src="img/coffee_.png" alt="Kavinės"> Kavinės</p>
+  <p id="p" onClick="switchPoi('p')"><img src="img/burger_.png" alt="Greitas maistas"> Greitas maistas</p>
+  <p id="q" onClick="switchPoi('q')"><img src="img/restaurant_.png" alt="Restoranai"> Restoranai</p>
+  <p id="r" onClick="switchPoi('r')"><img src="img/bar_.png" alt="Aludės, barai"> Aludės, barai</p>
+  </div>
+  <div id="g_kultura" style="border-color: #800000;"><p style="background-color: #800000; color: white;">Kultūra</p>
+  <p id="u" onClick="switchPoi('u')"><img src="img/theater_.png" alt="Teatrai"> Teatrai</p>
+  <p id="v" onClick="switchPoi('v')"><img src="img/cinema_.png" alt="Kino teatrai"> Kino teatrai</p>
+  <p id="x" onClick="switchPoi('x')"><img src="img/art-museum_.png" alt="Meno centrai"> Meno centrai</p>
+  <p id="i" onClick="switchPoi('i')"><img src="img/museum_.png" alt="Muziejai"> Muziejai</p>
+  <p id="y" onClick="switchPoi('y')"><img src="img/library_.png" alt="Bibliotekos"> Bibliotekos</p>
+  </div>
+  <div id="g_sveikata" style="border-color: #008080;"><p style="background-color: #008080; color: white;">Sveikata</p>
+  <p id="z" onClick="switchPoi('z')"><img src="img/hospital_.png" alt="Ligoninės"> Ligoninės</p>
+  <p id="A" onClick="switchPoi('A')"><img src="img/firstaid_.png" alt="Klinikos"> Klinikos</p>
+  <p id="B" onClick="switchPoi('B')"><img src="img/dentist_.png" alt="Odontologija"> Odontologija</p>
+  <p id="C" onClick="switchPoi('C')"><img src="img/medicine_.png" alt="Daktarai"> Daktarai</p>
+  <p id="D" onClick="switchPoi('D')"><img src="img/drugstore_.png" alt="Vaistinės"> Vaistinės</p>
+  </div>
+  <div id="g_prekyba" style="border-color: #808000;"><p style="background-color: #808000; color: white;">Parduotuvės</p>
+  <p id="E" onClick="switchPoi('E')"><img src="img/supermarket_.png" alt="Prekybos centrai"> Prekybos centrai</p>
+  <p id="F" onClick="switchPoi('F')"><img src="img/convenience_.png" alt="Parduotuvės"> Parduotuvės</p>
+  <p id="H" onClick="switchPoi('H')"><img src="img/market_.png" alt="Kioskai"> Kioskai</p>
+  <p id="I" onClick="switchPoi('I')"><img src="img/workshop_.png" alt="Pasidaryk pats"> Pasidaryk pats</p>
+  <p id="R" onClick="switchPoi('R')"><img src="img/departmentstore_.png" alt="Kitos parduotuvės"> Kitos parduotuvės</p>
+  </div>
+  <div id="g_religija" style="border-color: #888888;"><p style="background-color: #888888; color: white;">Religija</p>
+  <p id="J" onClick="switchPoi('J')"><img src="img/cathedral_.png" alt="Katalikų bažnyčios"> Katalikų bažnyčios</p>
+  <p id="K" onClick="switchPoi('K')"><img src="img/lutheran_.png" alt="Evangelikų bažnyčios"> Evangelikų bažnyčios</p>
+  <p id="L" onClick="switchPoi('L')"><img src="img/orthodox_.png" alt="Cerkvės"> Cerkvės</p>
+  <p id="M" onClick="switchPoi('M')"><img src="img/prayer_.png" alt="Kitų religijų maldos namai"> Kitų religijų maldos namai</p>
+  <p id="X" onClick="switchPoi('X')"><img src="img/convent_.png" alt="Vienuolynai"> Vienuolynai</p>
+  </div>
+  <div id="g_office" style="border-color: #8888ff;"><p style="background-color: #8888ff; color: white;">Kontoros</p>
+  <p id="N" onClick="switchPoi('N')"><img src="img/congress_.png" alt="Valstybinės įstaigos"> Valstybinės įstaigos</p>
+  <p id="O" onClick="switchPoi('O')"><img src="img/court_.png" alt="Teismai"> Teismai</p>
+  <p id="S" onClick="switchPoi('S')"><img src="img/postal_.png" alt="Paštai"> Paštai</p>
+  <p id="P" onClick="switchPoi('P')"><img src="img/administration_.png" alt="Notarai, antstoliai"> Notarai, antstoliai</p>
+  <p id="2" onClick="switchPoi('2')"><img src="img/police_.png" alt="Policija"> Policija</p>
+  <p id="Q" onClick="switchPoi('Q')"><img src="img/office-building_.png" alt="Kitos įmonės"> Kitos įmonės</p>
+  </div>
+  <div id="g_finance" style="border-color: #eeee77;"><p style="background-color: #eeee77; color: black;">Finansai</p>
+  <p id="U" onClick="switchPoi('U')"><img src="img/bigcity_.png" alt="Bankai"> Bankai</p>
+  <p id="Y" onClick="switchPoi('Y')"><img src="img/umbrella_.png" alt="Draudimas"> Draudimas</p>
+  <p id="V" onClick="switchPoi('V')"><img src="img/euro_.png" alt="Bankomatai"> Bankomatai</p>
+  </div>
+</div>
+<div id="search" class="search">
+<input type="text" id="filter" onkeyup="searchChange()" placeholder="Paieška..."><span onClick="hideSearch()"><i class="material-icons-red">cancel</i></span>
+<ul style="background-color: white;" id="result" class="result"><li>Nėra rezultatų</li></ul>
+</div>
+<div id="buttons" class="buttons hidden">
+<div id="poi_button" class="mbutton"><i class="material-icons">room</i></div>
+<div id="lay_button" class="mbutton"><i class="material-icons">reorder</i></div>
+<div id="inf_button" class="mbutton"><a href="info.html"><i class="material-icons">help</i></a></div>
+<div id="loc_button" class="mbutton"><i class="material-icons">gps_fixed</i></div>
+<div id="sea_button" class="mbutton"><i class="material-icons">find_in_page</i></div>
+<div id="col_button" class="mbutton"><a href="kolekcija.html"><i class="material-icons">done_all</i></a></div>
+</div>
+<div id="hint" class="hint hiddenhint"><span>Parinkite lankytinų vietų tipą</span><span id="arrow"><i class="material-icons" style="color: rgb(50,50,50)">
+label_important
+</i></span></div>
+</body>
+</html>

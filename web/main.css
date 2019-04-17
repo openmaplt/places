@@ -1,0 +1,212 @@
+.map {
+  height: 100%;
+  width: 100%;
+}
+.layers {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 3;
+  background-color: rgba(255,255,255,0.8);
+  padding: 5px;
+  overflow-y: auto;
+}
+.layers:hover { cursor: default; }
+.lays {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+}
+.lays:hover { cursor: pointer; }
+.poi {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 3;
+  background-color: rgba(255,255,255,0.8);
+  padding-left: 5px;
+  padding-right: 5px;
+  display: none;
+  overflow-y: auto;}
+.poi:hover { cursor: default; }
+.poi div { border-style: solid;
+           border-width: 2px;
+           margin-bottom: 2px;
+}
+.poi div p { padding-left: 10px;
+             margin: 0px;
+}
+.desc {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  max-height: 50%;
+  vertical-aligh: bottom;
+  background-color: white;
+  z-index: 2;
+  overflow-y: auto;
+  /*display: none;*/
+}
+.back {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z_index: 2;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.search {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 99%;
+  max-height: 99%;
+  z_index: 2;
+  display: none;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.result {
+  list-style-type: none;
+  padding-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.result:hover { cursor: default; }
+.result.li:hover { background-color: rgb(200, 200, 200); }
+.selected {
+  background-color: rgb(240, 240, 170);
+}
+.material-icons-black {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+    color: black;
+}
+.material-icons-red {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+    color: red;
+}
+table {
+  border: 0;
+  cellspacing: 0;
+}
+.mbutton {
+  background-color: rgba(20,20,20,0.8);
+  border-radius: 2px;
+  width: 40px;
+  height: 40px;
+  margin-top: 1px;
+}
+.mbutton:hover {
+  cursor: pointer;
+}
+.buttons {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 40px;
+  box-shadow: 1px 3px 2px gray;
+  transition: right 1s;
+}
+.hint {
+  position: absolute;
+  top: 1px;
+  right: 42px;
+  height: 36px;
+  background-color: rgba(250, 250, 250, 0.8);
+  border: 1px solid rgb(150, 150, 150);
+  border-left: 6px solid rgb(50, 220, 50);
+  box-shadow: 0 2px 6px gray;
+  border-radius: 1px;
+  padding: 1px;
+  padding-left: 10px;
+  display: inline-block;
+  display: none;
+  transition: top 0.5s;
+}
+#hint span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes anim_arrow {
+  0%   { padding-left: 0px;  padding-right: 10px; }
+  50%  { padding-left: 10px; padding-right:  0px; }
+  100% { padding-left: 0px;  padding-right: 10px; }
+}
+#arrow {
+  animation-name: anim_arrow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-bottom {
+  position: relative;
+  animation-name: animatebottom;
+  animation-duration: 0.5s
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+.hidden {
+  right: -40px;
+}
+.hiddenhint {
+  top: -50px;
+}

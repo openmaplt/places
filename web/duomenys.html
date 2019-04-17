@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="lt">
+<head>
+<title>Lietuvos lankytinų vietų žemėlapio duomenys</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Iš kur imami duomenys atviram Open Street Map Lietuvos žemėlapiui">
+<meta name="keywords" content="OSM Open Street Map Žemėlapis Lietuva Lithuania Garmin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="//dev.openmap.lt/js2/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="kom/kom.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-18331326-3', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+<body>
+<h2>Lietuvos lankytinų vietų žemėlapio duomenys</h2>
+
+<p class="meniu">
+<a href="/">Žemėlapis</a>
+<a href="info.html">Bendra informacija</a>
+<a href="lankytinos.html">Lankytinos vietos</a>
+<a href="duomenys.html" style="background: #77ff77;">Žemėlapio duomenys</a>
+<a href="technine.html">Techninė info</a>
+<a href="kontaktai.html">Kontaktai</a>
+<a href="prisidekite.html">Prisidėkite!</a>
+</p>
+
+<p><picture style='float: left; margin: 5px;'>
+<source srcset="osm-logo-small.png" media="(max-width: 500px)">
+<source srcset="osm-logo.png">
+<img src="osm-logo.png">
+</picture>Žemėlapio duomenys (tiek žemėlapio pagrindas, tiek ir lankytinų vietų informacija) paimti iš atviro žemėlapio - <a href="http://www.osm/org">OpenStreetMap</a>. Open street map - tai atviras projektas, renkantis viso pasaulio geografinius duomenis. Duomenis kuria ir prižiūri milijonai naudotojų visame pasaulyje.</p>
+
+<p>Atvirame žemėlapyje yra daug daugiau duomenų, nei kad yra panaudota šiame žemėlapyje. Jei galvojate, kad į šį žemėlapį tiktų įdėti kažkokius papildomus duomenis - <a href="kontaktai.html">susisiekite su kūrėjais</a>. Jei žinote kokią nors lankytiną vietą, kurios nėra šiame žemėlapyje, skaitykite skyrių <a href="prisidekite.html">„Prisidėkite“<a/>, kuriame rasite informaciją, kaip galite arba patys įdėti informaciją, arba pranešti apie tai žemėlapio kūrėjams.</p>
+
+<p>Jei norite atsisiųsti šį žemėlapį (su visomis lankytinomis vietomis) į savo išmanųjį telefoną, ieškotie programėlių, kurios naudoja OpenStreetMap duomenis, pavyzdžiui <a href="http://osmand.net/">OsmAnd</a>.</p>
+
+<p>Galite atsisųsti iš šių duomenų sukurtą <a href="http://garmin.openmap.lt">Lietuvos žemėlapį Garmin įrenginiams</a>.</p>
+
+<p>Taip pat galite tiesiog <a href="http://download.geofabrik.de/europe/lithuania.html">atsisiųsti pradinius duomenis OSM formatu</a>, arba GIS programų palaikomu <a href="http://shapes.openmap.lt/">ESRI shapes</a> formatu.</p>
+
+<div style="position: absolute; right: 0px; top: 2em;" onClick="showComment()"><img src="kom/atsiliepimai.png" alt="Atsiliepimai"></div>
+<div id="kom" class="kom"></div>
+<script>init(3, 'https://places.openmap.lt');</script>
+
+</body>
