@@ -12,27 +12,8 @@ var lTour = new ol.layer.Tile({source: new ol.source.OSM({url:'https://dev.openm
                          visible: false});
 var lTransp = new ol.layer.Tile({source: new ol.source.OSM({url:'https://dev.openmap.lt/transp/{z}/{x}/{y}.png',crossOrigin: null}),
                          visible: false});
-var lOSM = new ol.layer.Tile({source: new ol.source.OSM({url:'http://tile.openstreetmap.org/{z}/{x}/{y}.png'}),
+var lOrto = new ol.layer.Tile({source: new ol.source.OSM({url:'https://ort10lt.openmap.lt/g16/{z}/{x}/{y}.jpeg'}),
                          visible: false});
-var lOrtoO = new ol.layer.Tile({
-                        opacity: 1.0,
-                        source: new ol.source.TileWMS(({
-                          attributions: ['© ORT10LT (2012-2013), Nacionalinė žemės tarnyba prie Žemės ūkio ministerijos'],
-                          url: "http://www.geoportal.lt/arcgis/services/NZT/ORT10LT_2012_2013/MapServer/WMSServer",
-                          params: {"LAYERS": "0" , "TILED": "true", "STYLES": "default"},
-                        })),
-                        visible: false
-                      });
-
-var lOrto = new ol.layer.Tile({
-                        opacity: 1.0,
-                        source: new ol.source.TileWMS(({
-                          attributions: ['© ORT10LT (2015-2017), Nacionalinė žemės tarnyba prie Žemės ūkio ministerijos'],
-                          url: "http://www.geoportal.lt/arcgis/services/NZT/ORT10LT_2015/MapServer/WMSServer",
-                          params: {"LAYERS": "0" , "TILED": "true", "STYLES": "default"},
-                        })),
-                        visible: false
-                      });
 
 function poiLoader(extent, resolution, projection) {
     var epsg4326Extent =
@@ -194,11 +175,8 @@ try {
     target: 'map',
     layers: [
       lTour,
-      lOSM,
-      lOrtoO,
       lOrto,
-      lTransp,
-      lPOI
+      lTransp
     ],
     view: view,
     controls: ol.control.defaults({zoom: false, attribution: false}).extend([attr])
@@ -284,16 +262,8 @@ function switchToLayer(l) {
       break;
     case 'M':
       lTransp.setVisible(false);
-      lOrtoO.setVisible(false);
-      break;
-    case 'S':
-      lOSM.setVisible(false);
-      break;
-    case 'L':
-      lOrtoO.setVisible(false);
-      break;
-    case 'R':
       lOrto.setVisible(false);
+      break;
   }
   layer = l;
   switch (layer) {
@@ -302,19 +272,8 @@ function switchToLayer(l) {
       break;
     case 'M':
       lTransp.setVisible(true);
-      lOrtoO.setVisible(true);
-      break;
-    case 'P':
-      lTransp.setVisible(true);
-      break;
-    case 'S':
-      lOSM.setVisible(true);
-      break;
-    case 'L':
-      lOrtoO.setVisible(true);
-      break;
-    case 'R':
       lOrto.setVisible(true);
+      break;
   }
   hideLayers();
   $('#back').hide();
