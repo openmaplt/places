@@ -210,3 +210,7 @@ table {
 .hiddenhint {
   top: -50px;
 }
+.ol-attribution.ol-uncollapsible {
+  left: 0px;
+  right: unset;
+}

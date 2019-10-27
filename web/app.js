@@ -270,6 +270,13 @@ try {
 } // try
 }
 
+function toMap() {
+  switchToLayer('T');
+} // toMap
+function toOrto() {
+  switchToLayer('M');
+} // toOrto
+
 function switchToLayer(l) {
   switch (layer) {
     case 'T':

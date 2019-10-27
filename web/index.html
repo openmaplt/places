@@ -19,6 +19,8 @@
   <script type="text/javascript" src="/js/jquery.min.js"></script>
   <script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
   <script type="text/javascript" src="styles.js"></script>
+  <script type="text/javascript" src="switch.js"></script>
+  <link rel="stylesheet" href="https://openmap.lt/switch.css" type="text/css">
   <script type="text/javascript" src="app.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,19 +35,7 @@
 <body onload="init();" style="height:100%;margin:0px;overflow:hidden;">
 <div id="loader"></div>
 <div id="map" class="map"></div>
-<div id="lay" class="layers" style="display: none;">
-  <p id="layh">Uždaryti</p>
-  <p onClick="switchToLayer('T')">Turizmas
-  <br><img src="img/layer_turizmas.png" alt="Turizmo sluoksnio iliustracija"></p>
-  <p onClick="switchToLayer('M')">Turizmas (mišrus)
-  <br><img src="img/layer_misrus.png" alt="Mišraus turizmo ir ortofoto sluoksnio iliustracija"></p>
-  <p onClick="switchToLayer('S')">OpenStreetMap
-  <br><img src="img/layer_openstreetmap.png" alt="OpenStreetMap sluoksnio iliustracija"></p>
-  <p onClick="switchToLayer('R')">NŽT Ortofoto 2015-2017
-  <br><img src="img/layer_ortofoto.png" alt="Ortofoto 2015-2017 iliustracija"></p>
-  <p onClick="switchToLayer('L')">NŽT Ortofoto 2012-2013
-  <br><img src="img/layer_ortofoto.png" alt="Ortofoto 2012-2013 iliustracija"></p>
-</div>
+<div id="sw_container"></div>
 <div id="desc" class="desc">
 <p></p>
 </div>
@@ -135,7 +125,6 @@
 </div>
 <div id="buttons" class="buttons hidden">
 <div id="poi_button" class="mbutton"><i class="material-icons">room</i></div>
-<div id="lay_button" class="mbutton"><i class="material-icons">reorder</i></div>
 <div id="inf_button" class="mbutton"><a href="info.html"><i class="material-icons">help</i></a></div>
 <div id="loc_button" class="mbutton"><i class="material-icons">gps_fixed</i></div>
 <div id="sea_button" class="mbutton"><i class="material-icons">find_in_page</i></div>
@@ -144,5 +133,6 @@
 <div id="hint" class="hint hiddenhint"><span>Parinkite lankytinų vietų tipą</span><span id="arrow"><i class="material-icons" style="color: rgb(50,50,50)">
 label_important
 </i></span></div>
+<script>document.addEventListener("DOMContentLoaded", function(e) { sw_init('map'); } );</script>
 </body>
 </html>
