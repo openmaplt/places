@@ -10,7 +10,7 @@ var des;
 
 var lTour = new ol.layer.Tile({source: new ol.source.OSM({url:'https://dev.openmap.lt/tiles/{z}/{x}/{y}.png',crossOrigin: null}),
                          visible: false});
-var lTransp = new ol.layer.Tile({source: new ol.source.OSM({url:'https://dev.openmap.lt/transp/{z}/{x}/{y}.png',crossOrigin: null}),
+var lTransp = new ol.layer.Tile({source: new ol.source.OSM({url:'https://dev.openmap.lt/transp/{z}/{x}/{y}.png',crossOrigin: null, opaque: false}),
                          visible: false});
 var lOrto = new ol.layer.Tile({source: new ol.source.OSM({url:'https://ort10lt.openmap.lt/g16/{z}/{x}/{y}.jpeg'}),
                          visible: false});
