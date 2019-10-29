@@ -1,0 +1,2168 @@
+<Map srs="+init=epsg:3857">
+    <FontSet name="normal">
+        <Font face-name="DejaVu Sans Book"/>
+    </FontSet>
+    <FontSet name="italic">
+        <Font face-name="DejaVu Sans Oblique"/>
+    </FontSet>
+    <Style name="access">
+        <Rule>
+            <Filter>(([access]='permissive') and ((([highway]='unclassified') or ([highway]='residential')) or ([highway]='footway')))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(204,255,153)" stroke-linecap="round" stroke-dasharray="6, 8" stroke-width="6"/></Rule>
+        <Rule>
+            <Filter>(([access]='permissive') and (([highway]='service') and not (([service]='INT-minor'))))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(204,255,153)" stroke-linecap="round" stroke-dasharray="6, 8" stroke-width="3"/></Rule>
+        <Rule>
+            <Filter>(([access]='permissive') and (((([highway]='unclassified') or ([highway]='residential')) or ([highway]='footway')) or ([highway]='service')))</Filter>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(204,255,153)" stroke-linecap="round" stroke-dasharray="6, 8" stroke-width="6"/></Rule>
+        <Rule>
+            <Filter>(([access]='destination') and (([highway]='unclassified') or ([highway]='residential')))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(194,224,255)" stroke-linecap="round" stroke-dasharray="6, 8" stroke-width="6"/></Rule>
+        <Rule>
+            <Filter>(([access]='destination') and (([highway]='service') and not (([service]='INT-minor'))))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(194,224,255)" stroke-linecap="round" stroke-dasharray="6, 8" stroke-width="3"/></Rule>
+        <Rule>
+            <Filter>(([access]='destination') and ((([highway]='unclassified') or ([highway]='residential')) or ([highway]='service')))</Filter>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(194,224,255)" stroke-linecap="round" stroke-dasharray="6, 8" stroke-width="6"/></Rule>
+        <Rule>
+            <Filter>((([access]='private') or ([access]='no')) and not (([highway]='service')))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(239,169,169)" stroke-linecap="round" stroke-dasharray="6, 8" stroke-width="6"/></Rule>
+        <Rule>
+            <Filter>((([access]='private') or ([access]='no')) and (([highway]='service') and not (([service]='INT-minor'))))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(239,169,169)" stroke-linecap="round" stroke-dasharray="6, 8" stroke-width="3"/></Rule>
+        <Rule>
+            <Filter>(([access]='private') or ([access]='no'))</Filter>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(239,169,169)" stroke-linecap="round" stroke-dasharray="6, 8" stroke-width="6"/></Rule>
+    </Style>
+    <Style name="admin">
+        <Rule>
+            <Filter>(([admin_level]='2') or ([admin_level]='3'))</Filter>
+            <MinScaleDenominator>6500000</MinScaleDenominator>
+            <MaxScaleDenominator>50000000</MaxScaleDenominator>
+            <LineSymbolizer stroke="#aa0000" stroke-width="0.6" stroke-opacity="0.3"/></Rule>
+        <Rule>
+            <Filter>(([admin_level]='2') or ([admin_level]='3'))</Filter>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <MaxScaleDenominator>6500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="#aa0000" stroke-width="2" stroke-opacity="0.3"/></Rule>
+        <Rule>
+            <Filter>([admin_level]='2')</Filter>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <LineSymbolizer stroke="#aa0000" stroke-width="6" stroke-opacity="0.2"/></Rule>
+    </Style>
+    <Style name="boundary">
+        <Rule>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <MaxScaleDenominator>6500000</MaxScaleDenominator>
+            <PolygonSymbolizer fill-opacity="0.05" fill="rgb(0,128,0)"/><LineSymbolizer stroke="rgb(0,128,0)" stroke-width="1.5" stroke-dasharray="4, 2" stroke-opacity="0.15"/></Rule>
+        <Rule>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <PolygonSymbolizer fill-opacity="0.05" fill="rgb(0,128,0)"/><LineSymbolizer stroke="rgb(0,128,0)" stroke-width="3" stroke-dasharray="6, 2" stroke-opacity="0.15"/></Rule>
+        <Rule>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(0,128,0)" stroke-width="3" stroke-dasharray="6, 2" stroke-opacity="0.15"/></Rule>
+        <Rule>
+            <Filter>([way_area]&gt;=200000000)</Filter>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <MaxScaleDenominator>3000000</MaxScaleDenominator>
+            <TextSymbolizer size="8" fill="rgb(153,204,153)" fontset-name="normal" halo-radius="1" wrap-width="14">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <TextSymbolizer size="11" fill="rgb(153,204,153)" fontset-name="normal" halo-radius="1" wrap-width="14">[name]</TextSymbolizer>
+        </Rule>
+    </Style>
+    <Style name="capital">
+        <Rule>
+            <MinScaleDenominator>12500000</MinScaleDenominator>
+            <MaxScaleDenominator>25000000</MaxScaleDenominator>
+            <TextSymbolizer size="12" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="2">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <MaxScaleDenominator>12500000</MaxScaleDenominator>
+            <TextSymbolizer size="13" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="2">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <TextSymbolizer size="14" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="2">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <TextSymbolizer size="15" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="2">[name]</TextSymbolizer>
+        </Rule>
+    </Style>
+    <Style name="city">
+        <Rule>
+            <Filter>([place]='city')</Filter>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <MaxScaleDenominator>12500000</MaxScaleDenominator>
+            <TextSymbolizer size="11" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="2" allow-overlap="1">[name]</TextSymbolizer></Rule>
+        <Rule>
+            <Filter>([place]='city')</Filter>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <TextSymbolizer size="12" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="2" allow-overlap="1">[name]</TextSymbolizer></Rule>
+        <Rule>
+            <Filter>([place]='city')</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <TextSymbolizer size="14" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="2" allow-overlap="1">[name]</TextSymbolizer></Rule>
+      </Style>
+    <Style name="coastline">
+        <Rule><PolygonSymbolizer fill="rgb(197,224,240)"/></Rule>
+    </Style>
+    <Style name="country">
+        <Rule>
+            <Filter>([place]='country')</Filter>
+            <MinScaleDenominator>50000000</MinScaleDenominator>
+            <MaxScaleDenominator>200000000</MaxScaleDenominator>
+            <TextSymbolizer size="8" fill="rgb(157,108,157)" fontset-name="normal" halo-radius="1" wrap-width="20">[name]</TextSymbolizer></Rule>
+        <Rule>
+            <Filter>([place]='country')</Filter>
+            <MinScaleDenominator>6500000</MinScaleDenominator>
+            <MaxScaleDenominator>50000000</MaxScaleDenominator>
+            <TextSymbolizer size="10" fill="rgb(157,108,157)" fontset-name="normal" halo-radius="1" wrap-width="20">[name]</TextSymbolizer></Rule>
+    </Style>
+    <Style name="directions">
+        <Rule>
+            <Filter>([oneway]='yes')</Filter>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="bevel" stroke="rgb(108,112,213)" stroke-dasharray="0, 12, 10, 152"/><LineSymbolizer stroke-linejoin="bevel" stroke="rgb(108,112,213)" stroke-width="2" stroke-dasharray="0, 12, 9, 153"/><LineSymbolizer stroke-linejoin="bevel" stroke="rgb(108,112,213)" stroke-width="3" stroke-dasharray="0, 18, 2, 154"/><LineSymbolizer stroke-linejoin="bevel" stroke="rgb(108,112,213)" stroke-width="4" stroke-dasharray="0, 18, 1, 155"/></Rule>
+    </Style>
+    <Style name="ferry-routes">
+        <Rule>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <MaxScaleDenominator>6500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(102,102,255)" stroke-width="0.4" stroke-dasharray="4, 4"/></Rule>
+        <Rule>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(102,102,255)" stroke-width="0.8" stroke-dasharray="6, 6"/></Rule>
+    </Style>
+    <Style name="footbikecycle-tunnels">
+        <Rule>
+            <Filter>(([highway]='bridleway') or (([highway]='path') and ([horse]='designated')))</Filter>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(128,128,128)" stroke-width="5" stroke-dasharray="4, 2"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round"/><LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(0,128,0)" stroke-linecap="round" stroke-dasharray="4, 2" stroke-width="2"/></Rule>
+        <Rule>
+            <Filter>(([highway]='footway') or (([highway]='path') and ([foot]='designated')))</Filter>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(128,128,128)" stroke-width="5.5" stroke-dasharray="4, 2"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3.5" stroke-linecap="round"/><LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(250,128,114)" stroke-linecap="round" stroke-dasharray="1, 3" stroke-width="2.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='path') and not (((([bicycle]='designated') or ([foot]='designated')) or ([horse]='designated'))))</Filter>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(128,128,128)" stroke-width="5.5" stroke-dasharray="4, 2"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-dasharray="6, 3" stroke-width="0.5" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>(([highway]='cycleway') or (([highway]='path') and ([bicycle]='designated')))</Filter>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(128,128,128)" stroke-width="5" stroke-dasharray="4, 2"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round"/><LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(0,0,255)" stroke-linecap="round" stroke-dasharray="1, 3" stroke-width="2"/></Rule>
+    </Style>
+    <Style name="hamlet">
+        <Rule>
+            <Filter>(([place]='hamlet') or ([place]='locality'))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <TextSymbolizer size="8" fill="rgb(0,0,0)" fontset-name="italic" halo-radius="1" margin="10" allow-overlap="false">[name]</TextSymbolizer></Rule>
+        <Rule>
+            <Filter>(([place]='hamlet') or ([place]='locality'))</Filter>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <TextSymbolizer size="11" fill="rgb(119,119,119)" fontset-name="italic" halo-radius="1" margin="10" allow-overlap="false">[name]</TextSymbolizer></Rule>
+    </Style>
+    <Style name="highway-junctions">
+        <Rule>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(102,102,255)" minimum-distance="2" fontset-name="normal" halo-radius="1" wrap-width="12">[ref]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(102,102,255)" minimum-distance="2" fontset-name="normal" halo-radius="1" wrap-width="12">[ref]</TextSymbolizer>
+            <TextSymbolizer size="8" fill="rgb(102,102,255)" dy="-8" minimum-distance="2" fontset-name="normal" vertical-alignment="top" halo-radius="1" wrap-width="2" wrap-character=";">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <TextSymbolizer size="12" fill="rgb(102,102,255)" minimum-distance="2" fontset-name="normal" halo-radius="1" wrap-width="12">[ref]</TextSymbolizer>
+            <TextSymbolizer size="11" fill="rgb(102,102,255)" dy="-10" minimum-distance="2" fontset-name="normal" vertical-alignment="top" halo-radius="1" wrap-width="2" wrap-character=";">[name]</TextSymbolizer>
+        </Rule>
+    </Style>
+    <Style name="housenames">
+        <Rule>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <TextSymbolizer size="8" fill="rgb(68,68,68)" fontset-name="normal" wrap-width="20">[addr:housename]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>2500</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(68,68,68)" fontset-name="normal" wrap-width="20">[addr:housename]</TextSymbolizer>
+        </Rule>
+    </Style>
+    <Style name="housenumbers">
+        <Rule>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="1.5" halo-fill="rgb(255,255,255)">[addr:housenumber]</TextSymbolizer>
+        </Rule>
+    </Style>
+    <Style name="marinas-area">
+        <Rule>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(0,0,255)" stroke-dasharray="6, 2" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(0,0,255)" stroke-width="2" stroke-dasharray="6, 2" stroke-opacity="0.5"/></Rule>
+    </Style>
+    <Style name="minor-roads-fill">
+        <Rule>
+            <Filter>(([highway]='motorway'))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,153,0)" stroke-width="2" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='motorway'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,153,0)" stroke-width="4" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='motorway'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,153,0)" stroke-width="7" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='motorway'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,153,0)" stroke-width="10" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='trunk'))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,187,80)" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='trunk'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,187,80)" stroke-width="4" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='trunk'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,187,80)" stroke-width="7" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='trunk'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,187,80)" stroke-width="10" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='primary'))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,204,112)" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='primary'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,204,112)" stroke-width="4" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='primary'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,204,112)" stroke-width="7" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='primary'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,204,112)" stroke-width="10" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='secondary'))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,238,144)" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='secondary'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,238,144)" stroke-width="4" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='secondary'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,238,144)" stroke-width="7" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='secondary'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,238,144)" stroke-width="10" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([railway]='rail'))</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(153,153,153)" stroke-width="3"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-dasharray="8, 12"/></Rule>
+        <Rule>
+            <Filter>(([railway]='rail'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(153,153,153)" stroke-width="3"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-dasharray="0, 11, 8, 1"/></Rule>
+        <Rule>
+            <Filter>([railway]='spur-siding-yard')</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(170,170,170)"/></Rule>
+        <Rule>
+            <Filter>(([railway]='spur-siding-yard'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(153,153,153)" stroke-width="2"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="0.8" stroke-dasharray="0, 8, 11, 1"/></Rule>
+        <Rule>
+            <Filter>((([railway]='narrow_gauge') or ([railway]='funicular')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(102,102,102)" stroke-width="2"/></Rule>
+        <Rule>
+            <Filter>([railway]='miniature')</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(153,153,153)" stroke-width="1.2"/><LineSymbolizer stroke="rgb(153,153,153)" stroke-width="3" stroke-dasharray="1, 10"/></Rule>
+        <Rule>
+            <Filter>(([railway]='light_rail'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(102,102,102)" stroke-width="2"/></Rule>
+        <Rule>
+            <Filter>(([railway]='subway'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(153,153,153)" stroke-width="2"/></Rule>
+        <Rule>
+            <Filter>(((([highway]='tertiary') or ([highway]='residential')) or ([highway]='unclassified')) or ([highway]='road'))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(187,187,187)"/></Rule>
+        <Rule>
+            <Filter>((([highway]='residential') or ([highway]='unclassified') or ([highway]='living_street')) and not ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,192)" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>((([highway]='residential') or ([highway]='unclassified') or ([highway]='living_street')) and not ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,192)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>((([highway]='residential') or ([highway]='unclassified') or ([highway]='living_street')) and not ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,192)" stroke-width="5" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>((([highway]='residential') or ([highway]='unclassified') or ([highway]='living_street')) and not ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,192)" stroke-width="7" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>((([highway]='residential') or ([highway]='unclassified') or ([highway]='living_street')) and not ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,192)" stroke-width="9" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>((([highway]='residential') or ([highway]='unclassified') or ([highway]='living_street')) and ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>((([highway]='residential') or ([highway]='unclassified') or ([highway]='living_street')) and ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>((([highway]='residential') or ([highway]='unclassified') or ([highway]='living_street')) and ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="5" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>((([highway]='residential') or ([highway]='unclassified') or ([highway]='living_street')) and ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="7" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>((([highway]='residential') or ([highway]='unclassified') or ([highway]='living_street')) and ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="9" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='tertiary'))</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,160)" stroke-width="4.5" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='tertiary'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,160)" stroke-width="4.5" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='tertiary'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,160)" stroke-width="7" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='tertiary'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,160)" stroke-width="10" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='service') and not (([service]='INT-minor')))</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(187,187,187)" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='service') and not ([service]='INT-minor') and not ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,192)" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='service') and not ([service]='INT-minor') and not ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,192)" stroke-width="5" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='service') and ([service]='INT-minor') and not ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,192)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='service') and not ([service]='INT-minor') and ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='service') and not ([service]='INT-minor') and ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="5" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='service') and ([service]='INT-minor') and ([surface] = 'paved'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>([highway]='pedestrian')</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(237,237,237)" stroke-width="1.5" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>([highway]='pedestrian')</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(237,237,237)" stroke-width="3" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>([highway]='pedestrian')</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(237,237,237)" stroke-width="5.5" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>([highway]='pedestrian')</Filter>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(237,237,237)" stroke-width="8" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>(([highway]='platform') or ([railway]='platform'))</Filter>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(128,128,128)" stroke-width="6" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>([highway]='steps')</Filter>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(250,128,114)" stroke-width="5" stroke-dasharray="2, 1"/></Rule>
+        <Rule>
+            <Filter>((([highway]='bridleway') or (([highway]='path') and ([horse]='designated'))))</Filter>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke="rgb(0,128,0)" stroke-width="1.2" stroke-dasharray="4, 2"/></Rule>
+        <Rule>
+            <Filter>((([highway]='footway') or ((([highway]='path') and ([foot]='designated')) and not (([bicycle]='designated')))))</Filter>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="4" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-dasharray="1, 3" stroke="rgb(250,128,114)" stroke-width="1.5" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>((([highway]='path') and not (((([bicycle]='designated') or ([foot]='designated')) or ([horse]='designated')))))</Filter>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-dasharray="6, 3" stroke-width="0.5" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>(([highway]='platform') or ([railway]='platform'))</Filter>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(187,187,187)" stroke-width="4" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>([highway]='steps')</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,255,255)" stroke-width="6" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-dasharray="1, 3" stroke="rgb(250,128,114)" stroke-width="2" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>((([highway]='cycleway') or ((([highway]='path') and ([bicycle]='designated')) and not (([foot]='designated')))))</Filter>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-dasharray="1, 3" stroke="rgb(0,0,255)" stroke-width="1.2" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>(((([highway]='path') and ([bicycle]='designated')) and ([foot]='designated')))</Filter>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-dasharray="1, 3, 0, 4" stroke="rgb(0,0,255)" stroke-width="1.2" stroke-linecap="round"/><LineSymbolizer stroke-linejoin="round" stroke-dasharray="0, 4, 1, 3" stroke="rgb(250,128,114)" stroke-width="1.2" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>([highway]='byway')</Filter>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="4" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-dasharray="3, 4" stroke="rgb(255,204,0)" stroke-width="1.5" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>([highway]='track')</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-dasharray="3, 4" stroke="rgb(153,102,0)" stroke-width="1.2" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>([aeroway]='runway')</Filter>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(187,187,204)" stroke-width="2"/></Rule>
+        <Rule>
+            <Filter>([aeroway]='runway')</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(187,187,204)" stroke-width="4"/></Rule>
+        <Rule>
+            <Filter>([aeroway]='runway')</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(187,187,204)" stroke-width="7"/></Rule>
+        <Rule>
+            <Filter>(([aeroway]='runway'))</Filter>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(187,187,204)" stroke-width="18"/></Rule>
+        <Rule>
+            <Filter>([aeroway]='taxiway')</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(187,187,204)"/></Rule>
+        <Rule>
+            <Filter>(([aeroway]='taxiway'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(187,187,204)" stroke-width="4"/></Rule>
+        <Rule>
+            <Filter>(([aeroway]='taxiway'))</Filter>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(187,187,204)" stroke-width="6"/></Rule>
+    </Style>
+    <Style name="minor-roads-fill-links">
+        <Rule>
+            <Filter>(([highway]='motorway_link'))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,153,0)" stroke-width="0.5" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='motorway_link'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,153,0)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='motorway_link'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,153,0)" stroke-width="6.5" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='motorway_link'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,153,0)" stroke-width="9" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='trunk_link'))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,187,80)" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='trunk_link'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,187,80)" stroke-width="4" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='trunk_link'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,187,80)" stroke-width="7" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='trunk_link'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,187,80)" stroke-width="10" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='primary_link'))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,204,112)" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='primary_link'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,204,112)" stroke-width="4" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='primary_link'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,204,112)" stroke-width="7" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='primary_link'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,204,112)" stroke-width="10" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='secondary_link'))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,238,144)" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='secondary_link'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,238,144)" stroke-width="4" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='secondary_link'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,238,144)" stroke-width="7" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='secondary_link'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,238,144)" stroke-width="10" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='tertiary_link'))</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,160)" stroke-width="4.5" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='tertiary_link'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,160)" stroke-width="4.5" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='tertiary_link'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,160)" stroke-width="7" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='tertiary_link'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,160)" stroke-width="10" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+    </Style>
+    <Style name="piers">
+        <Rule>
+            <Filter>(([man_made]='breakwater') or ([man_made]='groyne'))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(170,170,170)"/></Rule>
+        <Rule>
+            <Filter>([man_made]='pier')</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(242,239,233)" stroke-width="1.5"/></Rule>
+        <Rule>
+            <Filter>(([man_made]='breakwater') or ([man_made]='groyne'))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(170,170,170)" stroke-width="2"/></Rule>
+        <Rule>
+            <Filter>([man_made]='pier')</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(242,239,233)" stroke-width="3"/></Rule>
+        <Rule>
+            <Filter>(([man_made]='breakwater') or ([man_made]='groyne'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(170,170,170)" stroke-width="4"/></Rule>
+        <Rule>
+            <Filter>([man_made]='pier')</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(242,239,233)" stroke-width="7"/></Rule>
+    </Style>
+    <Style name="cliffs">
+      <Rule>
+        <MaxScaleDenominator>100000</MaxScaleDenominator>
+        <MinScaleDenominator>20000</MinScaleDenominator>
+        <Filter>[natural] = 'cliff'</Filter>       
+        <LinePatternSymbolizer file= "/home/tomas/garmin/mapnik/symbols/cliff.png" />
+      </Rule>
+      <Rule>
+        <MaxScaleDenominator>20000</MaxScaleDenominator>
+        <Filter>[natural] = 'cliff'</Filter>
+       <LinePatternSymbolizer file= "/home/tomas/garmin/mapnik/symbols/cliff2.png" />
+      </Rule>
+      <!--Rule>
+        <MaxScaleDenominator>20000</MaxScaleDenominator>
+        <Filter>[man_made] = 'embankment'</Filter>
+        <LinePatternSymbolizer file= "/home/tomas/garmin/mapnik/symbols/cliff.png" type="png" width="10" height="4" />
+      </Rule-->
+    </Style>
+    <Style name="piers-area">
+        <Rule>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <PolygonSymbolizer fill="rgb(242,239,233)"/></Rule>
+    </Style>
+    <Style name="power_line">
+        <Rule>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(119,119,119)"/></Rule>
+        <Rule>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(119,119,119)" stroke-width="1.5"/></Rule>
+    </Style>
+    <Style name="power_minorline">
+        <Rule>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(119,119,119)" stroke-width="0.5"/></Rule>
+    </Style>
+    <Style name="power_poles">
+        <Rule>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <PointSymbolizer file="/home/tomas/garmin/mapnik/symbols/power_pole.png"/>
+        </Rule>
+    </Style>
+    <Style name="power_towers">
+        <Rule>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <PointSymbolizer file="/home/tomas/garmin/mapnik/symbols/power_tower_3x3.png"/>
+        </Rule>
+        <Rule>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <PointSymbolizer file="/home/tomas/garmin/mapnik/symbols/power_tower_5x5.png"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <PointSymbolizer file="/home/tomas/garmin/mapnik/symbols/power_tower.png"/>
+        </Rule>
+    </Style>
+    <Style name="roads">
+        <Rule>
+            <Filter>(([highway]='motorway') or ([highway]='motorway_link'))</Filter>
+            <MinScaleDenominator>6500000</MinScaleDenominator>
+            <MaxScaleDenominator>25000000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,153,0)" stroke-width="0.5" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') or ([highway]='motorway_link'))</Filter>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <MaxScaleDenominator>6500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,153,0)"/></Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') or ([highway]='motorway_link'))</Filter>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,153,0)" stroke-width="1.4" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') or ([highway]='motorway_link'))</Filter>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,153,0)" stroke-width="2" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') or ([highway]='motorway_link'))</Filter>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,153,0)" stroke-width="2.5" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') or ([highway]='trunk_link'))</Filter>
+            <MinScaleDenominator>6500000</MinScaleDenominator>
+            <MaxScaleDenominator>25000000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,187,80)" stroke-width="0.4" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') or ([highway]='trunk_link'))</Filter>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <MaxScaleDenominator>6500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,187,80)" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') or ([highway]='trunk_link'))</Filter>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,187,80)" stroke-width="2" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') or ([highway]='trunk_link'))</Filter>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,187,80)" stroke-width="2.5" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='primary') or ([highway]='primary_link'))</Filter>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <MaxScaleDenominator>6500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,204,112)" stroke-width="0.5" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='primary') or ([highway]='primary_link'))</Filter>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,204,112)" stroke-width="1.2" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='primary') or ([highway]='primary_link'))</Filter>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,204,112)" stroke-width="2" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='primary') or ([highway]='primary_link'))</Filter>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,204,112)" stroke-width="2.5" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='secondary') or ([highway]='secondary_link') or ([highway]='tertiary') or ([highway]='tertiary_link'))</Filter>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,238,144)" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>(([highway]='secondary') or ([highway]='secondary_link') or ([highway]='tertiary') or ([highway]='tertiary_link'))</Filter>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,238,144)" stroke-width="2" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>([railway]='rail')</Filter>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <MaxScaleDenominator>12500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(170,170,170)" stroke-width="0.6"/></Rule>
+        <Rule>
+            <Filter>(([railway]='rail') and not (([tunnel]='yes')))</Filter>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(170,170,170)"/></Rule>
+        <Rule>
+            <Filter>(([railway]='rail') and ([tunnel]='yes'))</Filter>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(170,170,170)" stroke-dasharray="5, 2"/></Rule>
+        <Rule>
+            <Filter>(((([railway]='tram') or ([railway]='light_rail')) or ([railway]='narrow_gauge')) or ([railway]='funicular'))</Filter>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <MaxScaleDenominator>3000000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(204,204,204)"/></Rule>
+        <Rule>
+            <Filter>(([railway]='rail') and not (([tunnel]='yes')))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(170,170,170)" stroke-width="2"/></Rule>
+        <Rule>
+            <Filter>(([railway]='rail') and ([tunnel]='yes'))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(170,170,170)" stroke-width="2" stroke-dasharray="5, 2"/></Rule>
+        <Rule>
+            <Filter>(((([railway]='tram') or ([railway]='light_rail')) or ([railway]='narrow_gauge')) or ([railway]='funicular'))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(170,170,170)"/></Rule>
+        <Rule>
+            <Filter>([railway]='preserved')</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(170,170,170)" stroke-width="1.5"/></Rule>
+        <Rule>
+            <Filter>([railway]='preserved')</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(153,153,153)" stroke-width="3"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-dasharray="0, 1, 8, 1"/></Rule>
+        <Rule>
+            <Filter>([railway]='INT-preserved-ssy')</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(170,170,170)"/></Rule>
+        <Rule>
+            <Filter>([railway]='INT-preserved-ssy')</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(153,153,153)" stroke-width="2"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="0.8" stroke-dasharray="0, 1, 8, 1"/></Rule>
+        <Rule>
+            <Filter>([railway]='monorail')</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="4" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-dasharray="2, 3" stroke="rgb(119,119,119)" stroke-width="3" stroke-linecap="round"/></Rule>
+    </Style>
+    <Style name="roads-text">
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=1))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield1.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=2))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield2.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=3))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield3.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=4))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield4.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=5))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield5.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=6))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield6.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=7))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield6.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=8))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield7.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=1))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield1.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=2))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield2.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=3))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield3.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=4))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield4.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=5))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield5.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=6))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield6.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=7))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield7.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=8))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield8.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=1))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield1.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=2))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield2.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=3))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield3.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=4))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield4.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=5))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield5.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=6))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield6.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=7))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield7.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=8))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield8.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='secondary') and ([length]=1)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield1.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='secondary') and ([length]=2)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield2.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='secondary') and ([length]=3)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield3.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='secondary') and ([length]=4)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield4.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='secondary') and ([length]=5)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield5.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='secondary') and ([length]=6)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield6.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='secondary') and ([length]=7)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield7.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='secondary') and ([length]=8)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield8.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='tertiary') and ([length]=1)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield1.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='tertiary') and ([length]=2)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield2.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='tertiary') and ([length]=3)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield3.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='tertiary') and ([length]=4)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield4.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='tertiary') and ([length]=5)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield5.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='tertiary') and ([length]=6)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield6.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='tertiary') and ([length]=7)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield7.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='tertiary') and ([length]=8)) and not (([bridge]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/raj_shield8.png" minimum-distance="150" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([highway]='unclassified') or ([highway]='residential')) and not (([bridge]='yes')))</Filter>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <TextSymbolizer size="10" fill="rgb(0,0,0)" spacing="750" minimum-distance="18" fontset-name="normal" halo-radius="1">[ref]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([aeroway]='runway') or ([aeroway]='taxiway')) and not (([bridge]='yes')))</Filter>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <TextSymbolizer size="10" fill="rgb(51,51,51)" placement="line" spacing="750" minimum-distance="18" fontset-name="normal" halo-radius="1">[ref]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') or ([highway]='primary'))</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <TextSymbolizer size="8" fill="rgb(0,0,0)" placement="line" fontset-name="normal">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>([highway]='secondary')</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <TextSymbolizer size="8" fill="rgb(0,0,0)" placement="line" fontset-name="normal" halo-radius="1" halo-fill="rgb(254,215,165)">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') or ([highway]='primary'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(0,0,0)" placement="line" fontset-name="normal">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') or ([highway]='primary'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <TextSymbolizer size="10" fill="rgb(0,0,0)" placement="line" fontset-name="normal">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>([highway]='secondary')</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(0,0,0)" placement="line" fontset-name="normal" halo-radius="1" halo-fill="rgb(254,215,165)">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>([highway]='secondary')</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <TextSymbolizer size="10" fill="rgb(0,0,0)" placement="line" fontset-name="normal" halo-radius="1" halo-fill="rgb(254,215,165)">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>([highway]='tertiary')</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(0,0,0)" placement="line" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>([highway]='tertiary')</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <TextSymbolizer size="11" fill="rgb(0,0,0)" placement="line" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='unclassified') or ([highway]='residential'))</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <TextSymbolizer size="8" fill="rgb(0,0,0)" placement="line" spacing="300" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='unclassified') or ([highway]='residential'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(0,0,0)" placement="line" spacing="300" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='unclassified') or ([highway]='residential'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <TextSymbolizer size="11" fill="rgb(0,0,0)" placement="line" spacing="400" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <ElseFilter/>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(0,0,0)" placement="line" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <ElseFilter/>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <TextSymbolizer size="11" fill="rgb(0,0,0)" placement="line" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+    </Style>
+    <Style name="roads-text-low-zoom">
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=1))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield1.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=2))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield2.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=3))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield3.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=4))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield4.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=5))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield5.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=6))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield6.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=7))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield6.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='motorway') and ([length]=8))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield7.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=1))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield1.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=2))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield2.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=3))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield3.png" minimum-distance="24" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=4))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield4.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=5))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield5.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=6))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield6.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=7))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield7.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='trunk') and ([length]=8))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(255,255,255)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield8.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=1))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(0,0,0)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield1.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=2))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(0,0,0)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield2.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=3))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(0,0,0)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield3.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=4))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(0,0,0)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield4.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=5))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(0,0,0)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield5.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=6))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(0,0,0)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield6.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=7))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(0,0,0)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield7.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([highway]='primary') and ([length]=8))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <ShieldSymbolizer size="10" fill="rgb(0,0,0)" placement="line" spacing="750" file="/home/tomas/garmin/mapnik/symbols/aut_shield8.png" minimum-distance="30" fontset-name="normal">[ref]</ShieldSymbolizer>
+        </Rule>
+    </Style>
+    <Style name="district">
+        <Rule>
+            <Filter>([place]='state')</Filter>
+            <MinScaleDenominator>25000000</MinScaleDenominator>
+            <MaxScaleDenominator>50000000</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(157,108,157)" fontset-name="normal" halo-radius="1">[ref]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>([place]='state')</Filter>
+            <MinScaleDenominator>6500000</MinScaleDenominator>
+            <MaxScaleDenominator>25000000</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(157,108,157)" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>([place]='state')</Filter>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <MaxScaleDenominator>6500000</MaxScaleDenominator>
+            <TextSymbolizer size="11" fill="rgb(157,108,157)" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+    </Style>
+    <Style name="suburb">
+        <Rule>
+            <Filter>([place]='suburb')</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <TextSymbolizer size="10" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="2" allow-overlap="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>([place]='suburb')</Filter>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <TextSymbolizer size="13" fill="rgb(119,119,119)" fontset-name="normal" halo-radius="2" allow-overlap="1">[name]</TextSymbolizer>
+        </Rule>
+    </Style>
+    <Style name="theme_park">
+        <Rule>
+            <Filter>([tourism]='theme_park')</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(115,74,8)" stroke-width="1.5" stroke-dasharray="9, 3" stroke-opacity="0.6"/></Rule>
+        <Rule>
+            <Filter>([tourism]='theme_park')</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(115,74,8)" stroke-width="2.5" stroke-dasharray="9, 3" stroke-opacity="0.6"/></Rule>
+    </Style>
+    <Style name="town">
+        <Rule>
+            <Filter>(([place]='town') and ([rank]='0'))</Filter>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <MaxScaleDenominator>3000000</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="2" wrap-width="20" allow-overlap="0">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([place]='town') or ([place]='large_town')) or ([place]='small_town'))</Filter>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="2" wrap-width="20" allow-overlap="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([place]='town') or ([place]='large_town')) or ([place]='small_town'))</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <TextSymbolizer size="12" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="2" wrap-width="20" allow-overlap="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([place]='town') or ([place]='large_town')) or ([place]='small_town'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <TextSymbolizer size="14" fill="rgb(119,119,119)" fontset-name="normal" halo-radius="2" wrap-width="20" allow-overlap="1">[name]</TextSymbolizer>
+        </Rule>
+    </Style>
+    <Style name="tracks-notunnel-nobridge">
+        <Rule>
+            <Filter>([tracktype]='grade1')</Filter>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(255,255,255)" stroke-width="3.5" stroke-opacity="0.4"/><LineSymbolizer stroke="rgb(179,119,0)" stroke-width="2" stroke-opacity="0.7"/></Rule>
+        <Rule>
+            <Filter>([tracktype]='grade2')</Filter>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-opacity="0.8" stroke="rgb(168,112,0)" stroke-linecap="round" stroke-dasharray="9, 4" stroke-width="1.5"/></Rule>
+        <Rule>
+            <Filter>([tracktype]='grade3')</Filter>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-opacity="0.8" stroke="rgb(153,102,0)" stroke-linecap="round" stroke-dasharray="3, 4" stroke-width="1.5"/></Rule>
+        <Rule>
+            <Filter>([tracktype]='grade4')</Filter>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-opacity="0.8" stroke="rgb(153,102,0)" stroke-linecap="round" stroke-dasharray="4, 7, 1, 5" stroke-width="2"/></Rule>
+        <Rule>
+            <Filter>([tracktype]='grade5')</Filter>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-opacity="0.8" stroke="rgb(153,102,0)" stroke-linecap="round" stroke-dasharray="1, 5" stroke-width="2"/></Rule>
+        <Rule>
+            <ElseFilter/>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.4"/><LineSymbolizer stroke-linejoin="round" stroke-dasharray="3, 4" stroke="rgb(153,102,0)" stroke-width="1.5" stroke-linecap="round"/></Rule>
+    </Style>
+    <Style name="tracks-tunnels">
+        <Rule>
+            <Filter>([tracktype]='grade1')</Filter>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(128,128,128)" stroke-width="5" stroke-dasharray="4, 2"/><LineSymbolizer stroke="rgb(255,255,255)" stroke-width="3.5"/><LineSymbolizer stroke="rgb(179,119,0)" stroke-width="2" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>([tracktype]='grade2')</Filter>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(128,128,128)" stroke-width="4.5" stroke-dasharray="4, 2"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round"/><LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(168,112,0)" stroke-linecap="round" stroke-dasharray="3, 4" stroke-width="1.5"/></Rule>
+        <Rule>
+            <Filter>([tracktype]='grade3')</Filter>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(128,128,128)" stroke-width="4.5" stroke-dasharray="4, 2"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3.5" stroke-linecap="round"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(153,102,0)" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/></Rule>
+        <Rule>
+            <Filter>([tracktype]='grade4')</Filter>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(128,128,128)" stroke-width="4.5" stroke-dasharray="4, 2"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round"/><LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(153,102,0)" stroke-linecap="round" stroke-dasharray="4, 7, 1, 5" stroke-width="2"/></Rule>
+        <Rule>
+            <Filter>([tracktype]='grade5')</Filter>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(128,128,128)" stroke-width="4.5" stroke-dasharray="4, 2"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round"/><LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(153,102,0)" stroke-linecap="round" stroke-dasharray="1, 5" stroke-width="2"/></Rule>
+        <Rule>
+            <ElseFilter/>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(128,128,128)" stroke-width="4.5" stroke-dasharray="4, 2"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="round"/><LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(153,102,0)" stroke-linecap="round" stroke-dasharray="3, 4" stroke-width="1.5"/></Rule>
+    </Style>
+    <Style name="village">
+        <Rule>
+            <Filter>(([place]='village'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <TextSymbolizer size="10" fill="rgb(0,0,0)" fontset-name="normal" halo-radius="1.8" margin="10" allow-overlap="false">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([place]='village'))</Filter>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <TextSymbolizer size="12" fill="rgb(90,90,90)" fontset-name="normal" halo-radius="1.8" margin="10" allow-overlap="false">[name]</TextSymbolizer>
+        </Rule>
+    </Style>
+    <Style name="water-lines-low-zoom">
+        <Rule>
+            <Filter>([waterway]='river')</Filter>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <MaxScaleDenominator>3000000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)" stroke-width="0.7"/></Rule>
+        <Rule>
+            <Filter>([waterway]='river')</Filter>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)" stroke-width="1.2"/></Rule>
+        <Rule>
+            <Filter>([waterway]='river')</Filter>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)" stroke-width="1.6"/></Rule>
+	  </Style>
+    <Style name="water_areas">
+        <Rule>
+            <Filter>(([natural] = 'water') or ([natural] = 'wetland') or ([landuse]='reservoir'))</Filter>
+            <MaxScaleDenominator>150000</MaxScaleDenominator>
+            <TextSymbolizer size="9" fill="rgb(40,40,245)" fontset-name="italic" halo-radius="1.5" wrap-width="20">[name]</TextSymbolizer></Rule>
+    </Style>
+    <Style name="water_lines">
+        <Rule>
+            <Filter>([waterway]='weir')</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(170,170,170)" stroke-width="2" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>([waterway]='wadi')</Filter>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(197,224,240)" stroke-linecap="round" stroke-dasharray="4, 4"/></Rule>
+        <Rule>
+            <Filter>([waterway]='wadi')</Filter>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-dasharray="4, 4" stroke="rgb(197,224,240)" stroke-width="2" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>([waterway]='river')</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(197,224,240)" stroke-width="2" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>([waterway]='river')</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(197,224,240)" stroke-width="3" stroke-linecap="round"/>
+            <TextSymbolizer size="9" fill="rgb(40,40,204)" placement="line" spacing="400" fontset-name="italic" halo-radius="1.5">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>([waterway]='river')</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(197,224,240)" stroke-width="5" stroke-linecap="round" stroke-opacity="0.5"/>
+            <TextSymbolizer size="10" fill="rgb(102,153,204)" placement="line" spacing="400" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>([waterway]='river')</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(197,224,240)" stroke-width="6" stroke-linecap="round" stroke-opacity="0.5"/>
+            <TextSymbolizer size="10" fill="rgb(102,153,204)" placement="line" spacing="400" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>([waterway]='river')</Filter>
+            <MinScaleDenominator>2500</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(197,224,240)" stroke-width="10" stroke-linecap="round" stroke-opacity="0.5"/>
+            <TextSymbolizer size="10" fill="rgb(102,153,204)" placement="line" spacing="400" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>([waterway]='river')</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>2500</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(197,224,240)" stroke-width="12" stroke-linecap="round" stroke-opacity="0.5"/>
+            <TextSymbolizer size="10" fill="rgb(102,153,204)" placement="line" spacing="400" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([waterway]='canal') and not (([disused]='yes')))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(197,224,240)" stroke-width="3" stroke-linecap="round"/></Rule>
+        <Rule>
+            <Filter>(([waterway]='canal') and not (([disused]='yes')))</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(197,224,240)" stroke-width="4" stroke-linecap="round"/><TextSymbolizer size="8" fill="rgb(102,153,204)" placement="line" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([waterway]='stream') or ([waterway]='ditch')) or ([waterway]='drain'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)"/></Rule>
+        <Rule>
+            <Filter>(([waterway]='river') and ([tunnel]='yes'))</Filter>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)" stroke-width="6" stroke-dasharray="4, 2"/><LineSymbolizer stroke="rgb(255,255,255)" stroke-width="4" stroke-opacity="0.5"/><TextSymbolizer size="10" fill="rgb(102,153,204)" placement="line" minimum-distance="200" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([waterway]='river') and ([tunnel]='yes'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)" stroke-width="7" stroke-dasharray="4, 2"/>
+            <LineSymbolizer stroke="rgb(255,255,255)" stroke-width="4" stroke-opacity="0.9"/>
+            <TextSymbolizer size="10" fill="rgb(102,153,204)" placement="line" minimum-distance="200" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([waterway]='river') and ([tunnel]='yes'))</Filter>
+            <MinScaleDenominator>2500</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)" stroke-width="11" stroke-dasharray="4, 2"/><LineSymbolizer stroke="rgb(255,255,255)" stroke-width="7" stroke-opacity="0.9"/><TextSymbolizer size="10" fill="rgb(102,153,204)" placement="line" minimum-distance="200" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([waterway]='river') and ([tunnel]='yes'))</Filter>
+            <MaxScaleDenominator>2500</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)" stroke-width="13" stroke-dasharray="4, 2"/>
+            <LineSymbolizer stroke="rgb(255,255,255)" stroke-width="9"/>
+            <TextSymbolizer size="10" fill="rgb(102,153,204)" placement="line" minimum-distance="200" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([waterway]='canal') and ([tunnel]='yes'))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)" stroke-width="7" stroke-dasharray="4, 2"/><LineSymbolizer stroke="rgb(255,255,255)" stroke-width="3"/><TextSymbolizer size="9" fill="rgb(102,153,204)" placement="line" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([waterway]='canal') and not ((([tunnel]='yes') or ([disused]='yes'))))</Filter>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(197,224,240)" stroke-width="7" stroke-linecap="round"/><TextSymbolizer size="9" fill="rgb(102,153,204)" placement="line" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([waterway]='canal') and ([tunnel]='yes'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)" stroke-width="11" stroke-dasharray="4, 2"/><LineSymbolizer stroke="rgb(255,255,255)" stroke-width="7"/><TextSymbolizer size="9" fill="rgb(102,153,204)" placement="line" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([waterway]='canal') and not (((([tunnel]='yes') or ([disused]='yes')) or ([lock]='yes'))))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(197,224,240)" stroke-width="11" stroke-linecap="round"/><TextSymbolizer size="9" fill="rgb(102,153,204)" placement="line" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([waterway]='canal') and not ((([tunnel]='yes') or ([disused]='yes')))) and ([lock]='yes'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke="rgb(197,224,240)" stroke-width="7" stroke-linecap="round"/><TextSymbolizer size="9" fill="rgb(102,153,204)" fontset-name="normal" halo-radius="1" wrap-width="20">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([waterway]='derelict_canal') or (([waterway]='canal') and ([disused]='yes')))</Filter>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(181,228,208)" stroke-linecap="round" stroke-dasharray="4, 4" stroke-width="1.5"/></Rule>
+        <Rule>
+            <Filter>(([waterway]='derelict_canal') or (([waterway]='canal') and ([disused]='yes')))</Filter>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(181,228,208)" stroke-linecap="round" stroke-dasharray="4, 6" stroke-width="2.5"/><TextSymbolizer size="9" fill="rgb(128,209,174)" placement="line" spacing="600" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([waterway]='derelict_canal') or (([waterway]='canal') and ([disused]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="rgb(181,228,208)" stroke-linecap="round" stroke-dasharray="4, 8" stroke-width="4.5"/><TextSymbolizer size="10" fill="rgb(128,209,174)" placement="line" spacing="600" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>(([waterway]='stream') and ([tunnel]='yes'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)" stroke-width="2.4" stroke-dasharray="4, 2"/><LineSymbolizer stroke="rgb(243,247,247)" stroke-width="1.2"/></Rule>
+        <Rule>
+            <Filter>(([waterway]='stream') and not (([tunnel]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)" stroke-width="2"/><TextSymbolizer size="8" fill="rgb(102,153,204)" placement="line" spacing="600" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <Filter>((([waterway]='drain') or ([waterway]='ditch')) and ([tunnel]='yes'))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)" stroke-width="2" stroke-dasharray="4, 2"/><LineSymbolizer stroke="rgb(243,247,247)"/></Rule>
+        <Rule>
+            <Filter>((([waterway]='drain') or ([waterway]='ditch')) and not (([tunnel]='yes')))</Filter>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke="rgb(197,224,240)"/><TextSymbolizer size="8" fill="rgb(102,153,204)" placement="line" spacing="600" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+    </Style>
+    <Style name="waterway-bridges">
+        <Rule>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-width="7"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(181,208,208)" stroke-width="6" stroke-linecap="round"/><TextSymbolizer size="9" fill="rgb(102,153,204)" placement="line" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MinScaleDenominator>50</MinScaleDenominator>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <LineSymbolizer stroke-linejoin="round" stroke-width="11"/><LineSymbolizer stroke-linejoin="round" stroke="rgb(181,208,208)" stroke-width="10" stroke-linecap="round"/><TextSymbolizer size="9" fill="rgb(102,153,204)" placement="line" fontset-name="normal" halo-radius="1">[name]</TextSymbolizer>
+        </Rule>
+      </Style>
+    <Layer name="water_areas" maximum-scale-denominator="12500000">
+        <StyleName>water_areas</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,"natural",waterway,landuse,coalesce("name:lt","name") "name"
+      from planet_osm_polygon
+      where landuse = 'reservoir'
+         or "natural" in ('water','wetland')
+      order by z_order,way_area desc
+      ) as water_areas</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="water-lines-low-zoom" minimum-scale-denominator="200000" maximum-scale-denominator="3000000">
+        <StyleName>water-lines-low-zoom</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,waterway,coalesce("name:lt","name") "name"
+      from planet_osm_line
+      where waterway='river'
+      ) as water_lines</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="water_lines" maximum-scale-denominator="200000">
+        <StyleName>water_lines</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,waterway,disused,lock,coalesce("name:lt","name") "name",
+      case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
+      from planet_osm_line
+      where waterway in ('weir','river','canal','derelict_canal','stream','drain','ditch','wadi')
+        and (bridge is null or bridge not in ('yes','true','1','aqueduct'))
+      order by z_order
+      ) as water_lines</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="marinas-area" maximum-scale-denominator="50000">
+        <StyleName>marinas-area</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way from planet_osm_polygon where leisure ='marina') as marinas
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="piers-area" maximum-scale-denominator="200000">
+        <StyleName>piers-area</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,man_made from planet_osm_polygon where man_made in ('pier','breakwater','groyne')) as piers
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="piers" maximum-scale-denominator="400000">
+        <StyleName>piers</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,man_made from planet_osm_line where man_made in ('pier','breakwater','groyne')) as piers
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="ferry-routes">
+        <StyleName>ferry-routes</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way from planet_osm_line where route='ferry' ) as routes
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="line features">
+      <StyleName>cliffs</StyleName>
+      <!--StyleName>barriers</StyleName-->
+      <Datasource>
+        <Parameter name="type">postgis</Parameter>
+        <Parameter name="host">/var/run/postgresql</Parameter>
+        <Parameter name="port">5432</Parameter>
+        <Parameter name="user">tomas</Parameter>
+        <Parameter name="dbname">gis</Parameter>
+        <Parameter name="table">
+      (select way,barrier,"natural",man_made
+         from planet_osm_line
+        where /*barrier is not null
+           or*/ "natural" in ('hedge','cliff')
+           /*or man_made='embankment'*/) as roads
+        </Parameter>
+      </Datasource>
+    </Layer>
+    <Layer name="housenumbers" maximum-scale-denominator="5000">
+        <StyleName>housenumbers</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,"addr:housenumber" from planet_osm_polygon where "addr:housenumber" is not null and "addr:contact" is null and building is not null
+       union
+       select way,"addr:housenumber" from planet_osm_point where "addr:housenumber" is not null and "addr:contact" is null
+      ) as housenumbers
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="housenames" maximum-scale-denominator="5000">
+        <StyleName>housenames</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,"addr:housename" from planet_osm_polygon where "addr:housename" is not null and building is not null
+       union
+       select way,"addr:housename" from planet_osm_point where "addr:housename" is not null
+      ) as housenames
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="footbikecycle-tunnels" clear-label-cache="1">
+        <StyleName>footbikecycle-tunnels</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,highway,horse,foot,bicycle
+         from planet_osm_line
+        where highway in ('bridleway','footway','cycleway','path')
+          and tunnel in ('yes','true','1', 'building_passage') order by z_order) as roads
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="tracks-tunnels">
+        <StyleName>tracks-tunnels</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,tracktype from planet_osm_line where highway='track' and tunnel in ('yes','true','1','building_passage')) as tracks
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="tracks-notunnel-nobridge">
+        <StyleName>tracks-notunnel-nobridge</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,tracktype from planet_osm_line where highway='track' and (bridge is null or bridge in ('no','false','0')) and (tunnel is null or tunnel in ('no','false','0'))) as tracks
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="minor-roads-fill">
+        <StyleName>minor-roads-fill-links</StyleName>
+        <StyleName>minor-roads-fill</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,highway,horse,bicycle,foot,construction,aeroway,cycleway,"cycleway:right","cycleway:left",null sidewalk,
+       case when tunnel in ('yes','true','1','building_passage') then 'yes'::text else tunnel end as tunnel,
+       case when bridge in ('yes','true','1','viaduct') then 'yes'::text else bridge end as bridge,
+       case when railway in ('spur','siding')
+              or (railway='rail' and service in ('spur','siding','yard'))
+            then 'spur-siding-yard'::text else railway end as railway,
+       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text else service end as service,
+       case when surface in ('asphalt', 'paved') then 'paved' else 'unpaved' end as surface
+       from planet_osm_line
+       where (highway is not null and highway not in ('proposed', 'construction'))
+          or aeroway in ('runway','taxiway')
+          or railway in ('light_rail','narrow_gauge','funicular','rail','subway','tram','spur','siding','platform','disused','abandoned','construction','miniature')
+       order by z_order) as roads
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="roads">
+        <StyleName>roads</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,highway,
+       case when tunnel in ('yes','true','1','building_passage') then 'yes'::text else tunnel end as tunnel,
+       case when railway='preserved' and service in ('spur','siding','yard') then 'INT-preserved-ssy'::text else railway end as railway
+       from planet_osm_roads
+       where highway is not null
+          or (railway is not null and railway!='preserved' and (service is null or service not in ('spur','siding','yard')))
+          or railway='preserved'
+       order by z_order
+      ) as roads
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="waterway-bridges">
+        <StyleName>waterway-bridges</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">(select way,name from planet_osm_line where waterway='canal' and bridge in ('yes','true','1','aqueduct') order by z_order) as water</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="planet roads text osm low zoom" minimum-scale-denominator="100000" maximum-scale-denominator="750000">
+        <StyleName>roads-text-low-zoom</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,highway,ref,char_length(ref) as length
+       from planet_osm_roads
+       where highway in ('motorway','trunk','primary')
+         and ref is not null
+      ) as roads
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="highway-junctions">
+        <StyleName>highway-junctions</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+     (select way,ref,name
+      from planet_osm_point
+      where highway='motorway_junction'
+     ) as junctions
+     </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="planet roads text osm">
+        <StyleName>roads-text</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,highway,aeroway,name,ref,char_length(ref) as length,
+       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
+       from planet_osm_line
+       where waterway IS NULL
+         and leisure IS NULL
+         and landuse IS NULL
+         and (name is not null or (((highway is not null and highway not in ('proposed', 'construction')) or aeroway is not null) and ref is not null))
+         and (route is null or route not in ('bus', 'trolleybus', 'road'))
+      ) as roads
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="power_line" maximum-scale-denominator="50000">
+        <StyleName>power_line</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">(select way from planet_osm_line where "power"='line') as power_line</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="power_minorline" maximum-scale-denominator="12500">
+        <StyleName>power_minorline</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">(select way from planet_osm_line where "power"='minor_line') as power_minorline</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="power_towers" maximum-scale-denominator="50000">
+        <StyleName>power_towers</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">(select way from planet_osm_point where power='tower') as power_towers</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="power_poles" maximum-scale-denominator="12500">
+        <StyleName>power_poles</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">(select way from planet_osm_point where power='pole') as power_poles</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="admin">
+        <StyleName>admin</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,admin_level
+       from planet_osm_roads
+       where "boundary"='administrative'
+         and admin_level = '2'
+       ) as admin</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="misc_boundaries" maximum-scale-denominator="6500000">
+        <StyleName>boundary</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,way_area,name,boundary from planet_osm_polygon where boundary='national_park') as boundary
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="theme_park" maximum-scale-denominator="100000">
+        <StyleName>theme_park</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,name,tourism from planet_osm_polygon where tourism='theme_park') as theme_park
+      </Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="placenames-large" minimum-scale-denominator="1500000" maximum-scale-denominator="200000000">
+        <StyleName>country</StyleName>
+        <StyleName>district</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,place,name,ref
+       from planet_osm_point
+       where place in ('country','state')
+      ) as placenames</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="placenames-capital" minimum-scale-denominator="25000" maximum-scale-denominator="25000000">
+        <StyleName>capital</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,place,name,ref
+       from planet_osm_point
+       where place = 'city' and capital='yes'
+      ) as placenames</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="placenames-medium" maximum-scale-denominator="12500000">
+        <StyleName>city</StyleName>
+        <StyleName>town</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,place,name,rank
+      from planet_osm_point
+      where place in ('city','metropolis','town','large_town','small_town')
+        and (capital is null or capital != 'yes')
+      order by cast (coalesce(rank, '20') as int) asc
+      ) as placenames</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="placenames-small">
+        <StyleName>suburb</StyleName>
+        <StyleName>village</StyleName>
+        <StyleName>hamlet</StyleName>
+        <Datasource>
+            <Parameter name="dbname">gis</Parameter>
+            <Parameter name="host">/var/run/postgresql</Parameter>
+            <Parameter name="port">5432</Parameter>
+            <Parameter name="table">
+      (select way,place,name
+      from planet_osm_point
+      where place in ('suburb','village','large_village','hamlet','locality','isolated_dwelling','farm')
+      order by cast (coalesce(population, '0') as int) desc
+      ) as placenames</Parameter>
+            <Parameter name="type">postgis</Parameter>
+            <Parameter name="user">tomas</Parameter>
+        </Datasource>
+    </Layer>
+</Map>
