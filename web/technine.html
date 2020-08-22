@@ -50,8 +50,8 @@ historic not in ('monument', 'memorial', 'wayside_cross', 'wayside_shrine', 'man
 <tr><td><img src="img/viewpoint_.png"> Vaizdingos vietos</td><td>tourism = 'viewpoint' and<br>historic is null</td></tr>
 <tr><td><img src="img/hiking_.png"> Pažintiniai takai</td><td>tourism = 'attraction' and<br>"attraction:type" = 'hiking_route'</td></tr>
 <tr><td><img src="img/tower_.png"> Bokštai</td><td>man_made in ('tower', 'communications_tower') and<br>"tower:type" is not null and<br>tourism in ('attraction', 'viewpoint', 'museum') and<br>coalesce(access, 'yes') != 'no'</td></tr>
-<tr><td><img src="img/fire_.png"> Poilsiavitės su laužaviete</td><td>tourism = 'picnic_site' or amenity = 'shelter' and<br>fireplace = 'yes'</td></tr>
-<tr><td><img src="img/picnic_.png"> Poilsiavitės be laužavietės</td><td>tourism = 'picnic_site' or amenity = 'shelter' and<br>fireplace is null or fireplace = 'no'</td></tr>
+<tr><td><img src="img/fire_.png"> Poilsiavitės su laužaviete</td><td>(tourism = 'picnic_site' or amenity = 'shelter') and<br>fireplace = 'yes'</td></tr>
+<tr><td><img src="img/picnic_.png"> Poilsiavitės be laužavietės</td><td>(tourism = 'picnic_site' or amenity = 'shelter') and<br>(fireplace is null or fireplace = 'no')</td></tr>
 <tr><td><img src="img/camping_.png"> Kempingai</td><td>tourism in ('camp_site', 'caravan_site')</td></tr>
 <tr><td><img src="img/hostel_.png"> Hosteliai</td><td>tourism in ('chalet', 'hostel', 'motel', 'guest_house')</td></tr>
 <tr><td><img src="img/hotel_.png"> Viešbučiai</td><td>tourism = 'hotel'</td></tr>
