@@ -19,6 +19,8 @@ if (isset($external_id)) {
 
 if (isset($_GET['map'])) {
   $map = 'Y';
+} else {
+  $map = 'N';
 }
 
 $query = "SELECT case when historic = 'archaeological_site' and site_type = 'fortification' then 'Piliakalnis'
@@ -81,8 +83,8 @@ $query = "SELECT case when historic = 'archaeological_site' and site_type = 'for
                 ,lon
                 ,uid
             FROM poif
-           WHERE uid = $id";
-$res = pg_query($link, $query);
+           WHERE uid = $1";
+$res = pg_query_params($link, $query, array($id));
 
 //echo "{$query}\n";
 while ($row = pg_fetch_assoc($res)) {
@@ -260,10 +262,26 @@ if ((strpos($ua, 'googlebot') == false) &&
     (strpos($ua, 'yandexbot') == false) &&
     (strpos($ua, '12bot') == false) &&
     (strpos($ua, 'dotbot') == false) &&
-    (strpos($ua, 'semrushbot') == false)
+    (strpos($ua, 'emrushbot') == false) &&
+    (strpos($ua, 'elegrambot') == false) &&
+    (strpos($ua, 'mail.ru_bot') == false) &&
+    (strpos($ua, 'velenpublicwebcrawler') == false) &&
+    (strpos($ua, 'linkdexbot') == false) &&
+    (strpos($ua, 'blexbot') == false) &&
+    (strpos($ua, 'ahrefsbot') == false) &&
+    (strpos($ua, 'megaindex.ru') == false)
    ) {
-  $query = "update poif set visit_count = coalesce(visit_count, 0) + 1 where uid = $id";
-  $res = pg_query($link, $query);
+  $query = "update poif set visit_count = coalesce(visit_count, 0) + 1 where uid = $1";
+  $res = pg_query_params($link, $query, array($id));
+
+  if ((strpos($ua, 'chrome') == false) &&
+      (strpos($ua, 'firefox') == false) &&
+      (strpos($ua, 'safari') == false) &&
+      (strpos($ua, 'trident') == false)
+     ) {
+    $query = "insert into user_agents values (nextval('user_agent_seq'), $1)";
+    $res = pg_query_params($link, $query, array($ua));
+  }
 }
 pg_close($link);
 ?>

@@ -19,11 +19,10 @@ function escapeJsonString($value) { # list from www.json.org: (\b backspace, \f 
   return $result;
 }
 
-// ,st_distance(way, ST_PointFromText('POINT(" . $x . " " . $y . ")', 4326)) as distance
 $query = "SELECT st_x(st_transform(way, 4326)) as lat
                 ,st_y(st_transform(way, 4326)) as lon
                 ,name as name
-                ,round(cast(st_distance(st_transform(way, 4326), ST_PointFromText('POINT(" . $x . " " . $y . ")', 4326)) * 100 as numeric), 3) as distance
+                ,round(cast(st_distance(st_transform(way, 4326), ST_PointFromText('POINT(' || $1 || ' ' || $2 || ')', 4326)) * 100 as numeric), 3) as distance
                 ,\"addr:city\" as city
                 ,\"addr:street\" as street
                 ,\"addr:housenumber\" as house
@@ -85,11 +84,11 @@ $query = "SELECT st_x(st_transform(way, 4326)) as lat
                  end as type
                 ,st_asgeojson(st_transform(way, 4326)) as geojson
             FROM poif
-           WHERE lower(name) like '%' || lower('$filter') || '%'
-              or lower(alt_name) like '%' || lower('$filter') || '%'
-           ORDER BY st_distance(st_transform(way, 4326), ST_PointFromText('POINT(" . $x . " " . $y . ")', 4326))
+           WHERE name_soundex like '%' || places_soundex(lower($3)) || '%'
+              or alt_name_soundex like '%' || places_soundex(lower($3)) || '%'
+           ORDER BY st_distance(st_transform(way, 4326), ST_PointFromText('POINT(' || $1 || ' ' || $2 || ')', 4326))
            LIMIT 10";
-$res = pg_query($link, $query);
+$res = pg_query_params($link, $query, array(floatval($x), floatval($y), $filter));
 
 $output = '';
 $rowOutput = '';
